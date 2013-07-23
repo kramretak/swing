@@ -1,0 +1,43 @@
+@import '../_colors';
+
+.photo-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 2%;
+  a {
+    display: block;
+    width: 3%;
+    height: 0;
+    padding: 9.5% 0;
+    position: absolute;
+    top: 0;
+    &.prev {
+      left: 0;
+    }
+    &.next {
+      right: 1%;
+    }
+    &:hover {
+      background: $grey;
+    }
+    i {
+      color: $white;
+      font-size: 2em;
+      line-height: 0;
+      text-shadow: 1px 1px 1px $black;
+    }
+  }
+  li {
+    display: inline-block;
+    width: 19%;
+    margin: 0 0 0 1.4%;
+    &:first-child {
+      margin: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

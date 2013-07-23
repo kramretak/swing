@@ -1,0 +1,61 @@
+/* <h1>Lists</h1>
+
+    <ul>
+      <li>Option A</li>
+      <li>Option B</li>
+      <li>Option C</li>
+    </ul>
+*/
+ul {
+	list-style: none;
+}
+
+/* Friend Selection list
+
+    <ul class="list-friend-selection">
+      <li><img src="http://placehold.it/50x50/FF6600/FFFFFF&text=img" /><span>Username</span></li>
+      <li class="selected"><img src="http://placehold.it/50x50/FF6600/FFFFFF&text=img" /><span>Username</span></li>
+      <li><img src="http://placehold.it/50x50/FF6600/FFFFFF&text=img" /><span>Username</span></li>
+    </ul>
+*/
+.list-friend-selection {
+  width: 100%;
+  .friend {
+    height: 35px;
+    padding: 3%;
+    background: $grey-lightest;
+    color: $grey-darkest;
+    border-bottom: 1px solid $grey;
+    position: relative;
+    i {
+      display: none;
+    }
+    img {
+      background: $grey;
+      float: left;
+      width: 35px;
+      height: 35px;
+    }
+    span {
+      font-size: .9em;
+      font-weight: bold;
+      padding: 10px;
+      @extend .ellipsis;
+    }
+    &:hover {
+      background: $grey-light;
+      cursor: pointer;
+    }
+    &.selected {
+      background: $grey-light;
+      i {
+        display: block;
+        font-size: 18px;
+        color: $grey-darker;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    }
+  }
+}

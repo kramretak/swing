@@ -1,0 +1,170 @@
+/* <h1>Dropdowns</h1>
+
+*/
+
+// Dropdown as used for Remove Event (showing 3 options)
+.dropdown {
+  position: relative;
+  z-index: 2;
+  .icon-remove {
+    display: inline-block;
+    font-size: 8px !important;
+    padding: 6px;
+    color: $grey;
+  }
+  .dropdown-options {
+    display: none;
+    background: $white;
+    border: 1px solid $grey;
+    @include box-shadow(0 0 2px $grey);
+    position: absolute;
+    right: 0;
+  }
+  li a {
+    color: $grey-darkest;
+    display: block;
+    padding: 5px 20px;
+    white-space: nowrap;
+    &:hover {
+      background: $blue-light;
+      color: $white;
+      outline: none;
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    .icon-remove {
+      color: $white;
+      background-color: $blue-light;
+      text-decoration: none;
+    }
+    .dropdown-options {
+      display: block;
+    }
+  }
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 5000;
+  background: $white;
+  border: 1px solid $grey-darkest;
+  @include border-radius(2px);
+  @include box-shadow(0 0 4px $grey-darker);
+}
+
+.dropdown-interested {
+  @extend .dropdown-menu;
+  .search {
+    position: relative;
+    padding: 15px 5px;
+    border-bottom: 1px solid $grey-dark;
+    .icon-search {
+      margin: 0 7px 0 3%;
+    }
+    input {
+      font-family: $fontfamily;
+      font-size: 14px;
+      width: 220px;
+      border: none;
+    }
+    .icon-remove {
+      position: absolute;
+      z-index: 5001;
+      left: 234px;
+      top: 15px;
+      color: $grey-dark;
+    }
+  }
+  .count {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    display: block;
+    padding: 12px;
+    font-weight: bold;
+    border-left: 2px solid $grey-light;
+  }
+  .friends {
+    @extend .list-friend-selection;
+    height: 270px;
+    overflow: auto;
+  }
+  // Overrides to make the dropdown look like the old version
+  &.pos {
+    font-family: 'Lucida Grande',Tahoma,Verdana,Arial,Sans-serif;
+    width: 220px;
+    @include border-radius(0);
+    @include box-shadow(0);
+    border: none;
+    font-size: 11px !important;
+    @media screen and (max-width: $widthMiniTablet) {
+      width: 70%;
+      position: fixed !important;
+      top: 15% !important;
+      left: 15% !important;
+      box-shadow: 0 0 10px 5px $grey-dark;
+    }
+    .icon-close {
+      @extend .modal-close;
+      display: none;
+      @media screen and (max-width: $widthMiniTablet) {
+        display: block !important;
+      }
+    }
+    h5 {
+      background: $grey-darkest;
+      color: $white;
+      padding: 4px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .count {
+      font-size: 11px;
+      border: none;
+      @include border-radius(2px);
+      background: $grey-light;
+      color: $black;
+      font-weight: bold;
+      padding: 1px 5px;
+      right: 4px;
+      @media screen and (max-width: $widthMiniTablet) {
+        display: none;
+      }
+    }
+    input, textarea {
+      font-size: 12px;
+      border: 1px inset $grey;
+      margin: 5px 5px 2px;
+      padding: 1px 2px;
+      width: 200px;
+      max-width: 200px;
+    }
+    #msg {
+      height: 30px;
+      max-height: 30px;
+    }
+    .friend {
+      background: $white;
+      padding: 5px;
+    }
+    .selected {
+      background: $blue-dark !important;
+      color: $white !important;
+      i {
+        display: none !important;
+      }
+    }
+    .friends {
+      height: 230px;
+    }
+    .ftr {
+      background: $grey-light;
+      padding: 0 0 3px 0;
+    }
+
+  }
+}
+
+

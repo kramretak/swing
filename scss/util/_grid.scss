@@ -1,0 +1,27 @@
+// Define column width (pagewidth chopped into 24 columns)
+$col_width: 100% / $numColumns;
+
+@mixin col($n: 1) { 
+  float: left;
+  width: ($n * $col_width);
+}
+// Prepend n blank columns
+@mixin prepend($n: 1) {
+  margin-left: $col_width * $n;
+}
+// Append n blank columns
+@mixin append($n: 1) {
+  margin-right: $col_width * $n;
+}
+
+// Position n columns from the left (not necessarily absolute)
+@mixin left($n: 1) {
+  float: none;
+  left: $col_width * $n;
+}
+
+// variant of 'col', specifying only the width, unfloated
+@mixin width($n: 1) {
+  float: none;
+  width: $col_width * $n;
+}

@@ -1,0 +1,56 @@
+.friendbar {
+  nav {
+    position: relative;
+    margin: 2px auto 7px;
+    width: 90%;
+    h5 {
+      color: $grey-darker;
+      text-align: center;
+      span {
+        display: inline-block;
+        padding: 0 3px;
+      }
+      b {
+        font-weight: normal;
+      }
+    }
+    a {
+      display: none; // JS will show if > 1 page
+      position: absolute;
+      top: -9px;
+      font-size: 28px;
+      &.icon-prev {
+        left: -7px;
+      }
+      &.icon-next {
+        right: -7px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }  
+  }
+  .carousel {
+    @include transition(margin .5s ease-out);
+  }
+  .carousel-item {
+    @include col(5.5);
+    @include append(.5);
+    margin-bottom: 2%;
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .friend-page {
+    float: left;
+  }
+  footer {
+    text-align: center;
+    a {
+      display: inline-block;
+    }
+  }
+}

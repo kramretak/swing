@@ -1,0 +1,201 @@
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  padding: 5px;
+  &.top {
+    margin-top: -($headerHeightDesktop + 5);
+  }
+  &.right {
+    margin-left: 5px;
+  }
+  &.bottom {
+    margin-top: -($headerHeightDesktop - 5);
+  }
+  &.left {
+    margin-left: -5px;
+  }
+  &.top .arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-top: 5px solid $black;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  &.right .arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-top: 5px solid transparent;
+    border-right: 5px solid $black;
+    border-bottom: 5px solid transparent;
+  }
+  &.bottom .arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $black;
+    border-left: 5px solid transparent;
+  }
+  &.left .arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid $black;
+  }
+  .arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+.popover-inner {
+  width: 280px;
+  padding: 3px;
+  overflow: hidden;
+  background: $black;
+  background: rgba(0, 0, 0, 0.8);
+  @include border-radius(6px);
+  @include box-shadow(0 3px 7px rgba(0, 0, 0, 0.3));
+}
+
+.popover-title {
+  position: relative;
+  padding: 9px 15px;
+  line-height: 1;
+  background-color: $grey-light;
+  border-bottom: 1px solid $grey-light;
+  @include border-radius(3px 3px 0 0);
+}
+
+.popover-title-span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1020;
+  a.remove {
+    background: url("/img/x2.png") 50% 0px no-repeat;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 1030;
+    top: 6px;
+    right: 5px;
+    cursor: pointer;
+  }
+}
+
+.popover-content {
+  padding: 14px;
+  background-color: $white;
+  @include border-radius(0 0 3px 3px);
+  @include background-clip(padding-box);
+  p, ul, ol {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.modal-open .popover {
+  z-index: 2060;
+}
+
+.invite-popover-error {
+  margin-bottom: 10px;
+  color: $red;
+}
+
+.invite-popover {
+  height: 200px;
+  overflow: auto;
+  border: 1px solid $grey-light;
+  .selected {
+    background: $green-lightest;
+  }
+  .list {
+    border-bottom: 1px solid $grey-light;
+    cursor: hand;
+    cursor: pointer;
+    padding: 5px;
+  }
+  .friend {
+    border-bottom: 1px solid $grey-light;
+    cursor: hand;
+    cursor: pointer;
+    b {
+      float: left;
+      margin-top: 10px;
+    }
+    img {
+      float: left;
+      margin: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    .btn {
+      float: right;
+    }
+  }
+}
+
+.invite-popover-bottom {
+  height: 20px;
+  padding: 5px 0;
+  #invite-selected {
+    padding: 5px;
+  }
+}
+
+.location-picker-wrapper {
+  margin: 0 0 0 90px !important;
+}
+.location-picker-popover {
+  height: 200px;
+  .search .query {
+    font-size: 20px;
+    width: 248px;
+  }
+  .options {
+    height: 170px;
+    overflow: auto;
+    border: 1px solid #eee;
+    margin-top: 5px;
+    a {
+      display: block;
+      color: #000;
+      &:hover {
+        background: #eee;
+      }
+    }
+    .option {
+      padding: 5px 5px 5px 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .selected {
+      font-weight: bold;
+      color: blue-darker;
+    }
+    .current {
+      padding-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: $widthTablet) {
+  .popover {
+    &.top {
+      margin-top: -($headerHeightTablet + 5);
+    }
+    &.bottom {
+      margin-top: -($headerHeightTablet - 5);
+    }
+  }
+  
+}

@@ -1,0 +1,95 @@
+/* <h1>Colors</h1>
+
+    <div class="badge" style="background: #FFF; border:1px solid #CCC;">white</div>
+    <div class="badge" style="background: #000; border:1px solid #CCC; color:#FFF;">black</div>
+
+    <div class="badge" style="background: #333; border:1px solid #CCC; color:#FFF;">grey-darkest</div>
+    <div class="badge" style="background: #666; border:1px solid #CCC; color:#FFF;">grey-darker</div>
+    <div class="badge" style="background: #999; border:1px solid #CCC; color:#FFF;">grey-dark</div>
+    <div class="badge" style="background: #CCC; border:1px solid #CCC;">grey</div>
+    <div class="badge" style="background: #EEE; border:1px solid #CCC;">grey-light</div>
+    <div class="badge" style="background: #EFEFEF; border:1px solid #CCC;">grey-lighter</div>
+    <div class="badge" style="background: #F7F7F7; border:1px solid #CCC;">grey-lightest</div>
+
+    <div class="badge" style="background: #DDE9F3; border:1px solid #CCC;">blue-lightest</div>
+    <div class="badge" style="background: #D8DDEE; border:1px solid #CCC;">blue-lighter</div>
+    <div class="badge" style="background: #9AADCD; border:1px solid #CCC;">blue-light</div>
+    <div class="badge" style="background: #4b93EE; border:1px solid #CCC;">blue</div>
+    <div class="badge" style="background: #5C769E; border:1px solid #CCC; color:#FFF;">blue-dark</div>
+    <div class="badge" style="background: #3B5998; border:1px solid #CCC; color:#FFF;">blue-darker</div>
+    <div class="badge" style="background: #1a356e; border:1px solid #CCC; color:#FFF;">blue-darkest</div>
+    <div class="badge" style="background: #34C1F5; border:1px solid #CCC;">blue-bright</div>
+    <div class="badge" style="background: #3696FF; border:1px solid #CCC;">blue-info</div>
+
+    <div class="badge" style="background: #D41F6C; border:1px solid #CCC;">pink-dark</div>
+    <div class="badge" style="background: #EF5F9D; border:1px solid #CCC;">pink</div>
+
+    <div class="badge" style="background: #A669D6; border:1px solid #CCC; color:#FFF;">purple</div>
+
+    <div class="badge" style="background: #FFEBE8; border:1px solid #CCC;">red-lightest</div>
+    <div class="badge" style="background: #EC4122; border:1px solid #CCC;">red-light</div>
+    <div class="badge" style="background: #F00; border:1px solid #CCC;">red</div>
+    <div class="badge" style="background: #E22B0A; border:1px solid #CCC;">red-dark</div>
+    <div class="badge" style="background: #A31712; border:1px solid #CCC; color:#FFF;">red-darkest</div>
+
+    <div class="badge" style="background: #E3F8DF; border:1px solid #CCC;">green-lightest</div>
+    <div class="badge" style="background: #A0CE85; border:1px solid #CCC;">green-lighter</div>
+    <div class="badge" style="background: #14CC6A; border:1px solid #CCC;">green-light</div>
+    <div class="badge" style="background: #659300; border:1px solid #CCC;">green</div>
+    <div class="badge" style="background: #298010; border:1px solid #CCC;">green-dark</div>
+    <div class="badge" style="background: #006B7E; border:1px solid #CCC; color:#FFF;">green-darker</div>
+    <div class="badge" style="background: #2D5200; border:1px solid #CCC; color:#FFF;">green-darkest</div>
+
+    <div class="badge" style="background: #F9F5CD; border:1px solid #CCC;">yellow-lighter</div>
+    <div class="badge" style="background: #FBE996; border:1px solid #CCC;">yellow-light</div>
+
+    <div class="badge" style="background: #279BB0; border:1px solid #CCC; color:#FFF;">turquoise</div>
+
+*/
+
+/* WHEN MAKING CHANGES TO THE COLORS, PLEASE UPDATE THE DOCS AS WELL, THANKS! */
+
+$white: #FFF;
+$black: #000;
+
+$grey-darkest: #333;
+$grey-darker: #666;
+$grey-dark: #999;
+$grey: #CCC;
+$grey-light: #EEE;
+$grey-lighter: #EFEFEF;
+$grey-lightest: #F7F7F7;
+
+$blue-lightest: #DDE9F3;
+$blue-lighter: #D8DDEE;
+$blue-light: #9AADCD; // FB Blue
+$blue: #4b93EE;
+$blue-dark: #5C769E;
+$blue-darker: #3B5998; // default link color
+$blue-darkest: #1a356e;
+$blue-bright: #34C1F5; // used in Facepile (Friends interested)
+$blue-info: #3696FF;
+
+$purple: #A669D6; // used in Facepile (Friends invited)
+
+$pink-dark: #D41F6C;
+$pink: #EF5F9D;
+
+$red-lightest: #FFEBE8;
+$red-light: #EC4122;
+$red: #F00;
+$red-dark: #E22B0A;
+$red-darkest: #A31712;
+
+$green-lightest: #E3F8DF;
+$green-lighter: #A0CE85;
+$green-light: #14CC6A; // used in Facepile (Friends going)
+$green: #659300;
+$green-dark: #298010;
+$green-darker: #006B7E; // green from the logo
+$green-darkest: #2D5200;
+
+$yellow-lighter: #F9F5CD;
+$yellow-light: #FBE996;
+
+$turquoise: #279BB0;

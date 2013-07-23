@@ -1,0 +1,57 @@
+/* <h1>Text treatments</h1>
+
+<b>Please note that these are Helper classes (_text.scss is prefixed with underscore), so don't apply these classes directly in the HTML. Rather, inside your CSS modules, use @extend .class</b>
+    <p class="txt-s">Small text (80%)</p>
+    <p class="txt-center">Center-aligned text</p>
+    <p class="txt-right">Right-aligned text</p>
+    <p class="txt-left">Left-aligned text</p>
+    <p class="txt-s">Smaller text (85%)</p>
+    <p class="txt-b">Bold text</p>
+    <p class="txt-u">Underlined text</p>
+    <p class="txt-i">Italic/Emphasized text</p>
+    <p class="txt-up">Uppercase text</p>
+*/
+.txt-ss {
+  font-size: .8em;
+  line-height: .9em;
+}
+.txt-s {
+  font-size: .9em;
+  line-height: 1.2em;
+}
+.txt-center {
+  text-align: center;
+}
+.txt-right {
+  text-align: right;
+}
+.txt-left {
+  text-align: left;
+}
+.txt-b {
+  font-weight: bold;
+}
+.txt-u {
+  text-decoration: underline;
+}
+.txt-i {
+  font-style: italic;
+}
+.txt-up {
+  text-transform: uppercase;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ellipsis-inline {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

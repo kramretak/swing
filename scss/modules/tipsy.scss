@@ -1,0 +1,104 @@
+.tipsy {
+  font-size: .85em;
+  position: absolute;
+  padding: 8px 0;
+  z-index: 10000;
+}
+
+.tipsy-inner {
+  background-color: $black;
+  color: $white;
+  max-width: 200px;
+  padding: 5px 8px 4px 8px;
+  text-align: center;
+}
+
+.tipsy-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+}
+
+.tipsy-arrow-n {
+  border-bottom-color: $black;
+}
+
+.tipsy-arrow-s {
+  border-top-color: $black;
+}
+
+.tipsy-arrow-e {
+  border-left-color: $black;
+}
+
+.tipsy-arrow-w {
+  border-right-color: $black;
+}
+
+.tipsy-n .tipsy-arrow, .tipsy-nw .tipsy-arrow, .tipsy-ne .tipsy-arrow {
+  top: 3px;
+  border-top: none;
+  border-bottom-color: $black;
+}
+
+.tipsy-s .tipsy-arrow, .tipsy-sw .tipsy-arrow, .tipsy-se .tipsy-arrow {
+  bottom: 3px;
+  border-bottom: none;
+  border-top-color: $black;
+}
+
+.tipsy-n .tipsy-arrow, .tipsy-s .tipsy-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+
+.tipsy-nw .tipsy-arrow, .tipsy-sw .tipsy-arrow {
+  left: 10px;
+}
+
+.tipsy-ne .tipsy-arrow, .tipsy-se .tipsy-arrow {
+  right: 10px;
+}
+
+.tipsy-e .tipsy-arrow, .tipsy-w .tipsy-arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+
+.tipsy-e .tipsy-arrow {
+  right: 0;
+  border-right: none;
+}
+
+.tipsy-w .tipsy-arrow {
+  left: 0;
+  border-left: none;
+}
+
+.tipsy-se2 .tipsy-arrow {
+  left: 18px;
+  bottom: 3px;
+  border-bottom: none;
+  border-top-color: $black;
+}
+
+.tipsy-sw2 {
+  margin: -4px 0 0 -5px;
+  .tipsy-arrow {
+    left: 8px;
+    bottom: 3px;
+    border-bottom: none;
+    border-top-color: $black;
+  }
+}
+
+.tipsy-sw3 {
+  margin: 3px 0 0 -30px;
+  .tipsy-arrow {
+    right: 13px;
+    bottom: 3px;
+    border-bottom: none;
+    border-top-color: $black;
+  }
+}

@@ -1,0 +1,71 @@
+// Styles defined only for the "remove page" -  not sure whether this page is still used
+
+.remove-page {
+  .day-tabs-ext {
+    margin: 15px 0 25px;
+  }
+  h2 {
+    color: $grey-darkest;
+    font-size: 15px;
+    text-align: center;
+  }
+  h3 {
+    color: $grey-darkest;
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .textbox-cnt {
+    width: 509px;
+    margin: 30px auto;
+  }
+  .textbox-greyarea > a {
+    &.left {
+      padding: 4px 0;
+    }
+    &.right {
+      padding: 3px 12px;
+    }
+  }
+  .arrowup {
+    background: url("/img/arrowup.png");
+    width: 11px;
+    height: 7px;
+    position: absolute;
+    top: -7px;
+    left: 10px;
+  }
+}
+
+.textbox {
+  padding: 3px;
+}
+
+.textbox-cnt {
+  border: 1px solid blue-lighter;
+  position: relative;
+}
+
+.textbox-greyarea {
+  background: $grey-light;
+  border-top: 1px solid $grey-light;
+  padding: 10px;
+}
+
+.textbox {
+  textarea {
+    border: 0;
+    width: 100%;
+    color: $grey-darker;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    height: 60px;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 60px;
+  }
+  .arrowup {
+    left: 260px;
+  }
+}

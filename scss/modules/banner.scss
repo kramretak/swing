@@ -1,0 +1,66 @@
+.banner-fixed {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10000;
+}
+.banner {
+  width: 98%;
+  padding: 1%;
+  border-bottom: 1px solid;
+  &.success {
+    @extend .banner-fixed;
+    background: $green-lightest;
+    border-color: $green-lighter;
+    color: $green-dark;
+    @extend .icon-check;
+    &:before {
+      font-size: 3em;
+      float: left;
+      margin-right: .5%;
+    }
+    .icon-close {
+      color: $green-dark;
+    }
+  }
+  &.promotion {
+    padding: .5% 1%;
+    font-family: $fontfamily-thick;
+    background-color: $pink-dark;
+    color: $white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    span {
+      display: inline-block;
+      padding-left: 16px;
+      position: relative;
+    }
+    .icon-close {
+      color: $white;
+    }
+    .icon-phone:before {
+      font-size: 24px;
+      position: absolute;
+      top: -5px;
+      left: 0;
+    }
+    &:hover span {
+      text-decoration: underline;
+    }
+  }
+  &.large {
+    padding: 1.5% 1%;
+    font-size: 30px;
+  }
+
+  .icon-close {
+    margin-right: .5em;
+    float: right;
+  }
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}

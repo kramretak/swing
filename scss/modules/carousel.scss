@@ -1,0 +1,137 @@
+.carousel-cnt {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  .carousel-left, .carousel-right {
+    position: absolute;
+    top: 15px;
+    background: $white;
+    padding: 5px;
+    border: 1px solid $grey-dark;
+    @include border-radius(3px);
+    font-size: 2em;
+    color: $grey-dark;
+    line-height: 1em;
+    height: 1em;
+  }
+  .carousel-left {
+    left: 0;
+  }
+  .carousel-right {
+    right: 0;
+  }
+  .dialog-event {
+    border-top: 1px solid $grey;
+    > div {
+      padding: 12px;
+      border-top: 1px solid $grey-light;
+    }
+  }
+  .dialog-event-people {
+    width: 88%;
+    height: 102px;
+    overflow: hidden;
+    margin: 0 auto;
+    .carousel-item {
+      float: left;
+      width: 75px;
+      padding-left: 2px;
+      margin-bottom: 40px;
+      position: relative;
+      .btn-fb {
+        font-size: .75em;
+        width: 71px;
+        display: block;
+        margin: 0;
+        padding: 3px 1px;
+        position: absolute;
+        text-shadow: none;
+        text-align: center;
+        &:active {
+          top: auto;
+          left: auto;
+        }
+      }
+      .attendance {
+        text-align: left;
+        background: $blue-lighter;
+        color: $grey-darker;
+        font-size: 8px;
+        height: 50px;
+        margin: 0 5px 0 0;
+        width: 50px;
+        > div {
+          padding: 5px 0 0 10px;
+        }
+        b {
+          color: $grey-darker;
+          display: block;
+          font-size: 9px;
+          font-weight: normal;
+          &.count {
+            color: $grey-darkest;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+        a {
+          margin-top: 3px;
+          display: block;
+        }
+      }
+    }
+  }
+  .dialog-event img {
+    width: 75px;
+    height: 75px;
+  }
+  .name-gradient {
+    width: 75px !important;
+  }
+}
+
+.carousel-cnt-tabs {
+  color: $blue-darker;
+  a {
+    color: $blue-darker;
+  }
+  span {
+    color: $grey-darker;
+  }
+}
+
+.end-overlay {
+  position: absolute;
+  right: 5.9%;
+  top: 0;
+  width: 20px;
+  height: 102px;
+  background-image: url("/img/carousel_end.png");
+}
+
+.carousel {
+  margin-top: 0;
+  h6 {
+    height: 75px;
+  }
+}
+
+.carousel-steps {
+  text-align: center;
+  > b {
+    width: 6px;
+    height: 6px;
+    @include border-radius(12px);
+    background: $blue-lighter;
+    display: inline-block;
+    margin-right: 5px;
+    &.on {
+      background: $blue-darker;
+    }
+  }
+}
+@media screen and (max-width: $widthTablet) {
+  .end-overlay {
+    display: none;
+  }
+}

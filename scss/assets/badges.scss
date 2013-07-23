@@ -1,0 +1,64 @@
+/* <h1>Badges</h1>
+
+Default badge:
+
+    <div class="badge">10</div>
+
+Info badge:
+
+    <div class="badge-info">100</div>
+
+Important badge:
+
+    <div class="badge-important">1000</div>
+*/
+.badge {
+  @include border-radius(11px);
+  background-color: $grey;
+  font-size: 0.9em;
+  font-weight: bold;
+  @include box-shadow(0 0 2px 2px $white);
+  min-width: 18px;
+  min-height: 18px;
+  line-height: 18px;
+  padding: 2px;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.badge-info {
+  @extend .badge;
+  background-color: $blue-info;
+  color: $white;
+}
+.badge-important {
+  @extend .badge;
+  background-color: $red-light;
+  color: $white;
+  &:hover {
+    background-color: darken($red-light, 5%);
+  }
+}
+
+/* Badge positioning helpers */
+.badge-tl {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+.badge-tr {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+.badge-bl {
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+}
+.badge-br {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+}

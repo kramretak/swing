@@ -1,0 +1,49 @@
+// @todo refactor this properly to accept variables
+
+@-moz-keyframes explode {
+    0% { -moz-transform: scale(1); }
+   50% { -moz-transform: scale(3); }
+  100% { -moz-transform: scale(1); }
+}
+@-webkit-keyframes explode {
+    0% { -webkit-transform:scale(1); }
+   50% { -webkit-transform:scale(3); }
+  100% { -webkit-transform:scale(1); }
+}
+@-ms-keyframes explode {
+    0% { -ms-transform:scale(1); }
+   50% { -ms-transform:scale(3); }
+  100% { -ms-transform:scale(1); }
+}
+@-o-keyframes explode {
+    0% { -o-transform:scale(1); }
+   50% { -o-transform:scale(3); }
+  100% { -o-transform:scale(1); }
+}
+@keyframes explode {
+    0% { transform:scale(1); }
+   50% { transform:scale(3); }
+  100% { transform:scale(1); }
+}
+
+/* Swing animation, used in the header logo */
+// @-moz-keyframes swing {
+//     0% { -moz-transform: rotate(0deg); }
+//    50% { -moz-transform: rotate(-7deg); }
+// }
+// @-webkit-keyframes swing {
+//     0% { -webkit-transform: rotate(0deg); }
+//    50% { -webkit-transform: rotate(-7deg); }
+// }
+// @-ms-keyframes swing {
+//     0% { -ms-transform: rotate(0deg); }
+//    50% { -ms-transform: rotate(-7deg); }
+// }
+// @-o-keyframes swing {
+//     0% { -o-transform: rotate(0deg); }
+//    50% { -o-transform: rotate(-7deg); }
+// }
+// @keyframes swing {
+//     0% { transform: rotate(0deg); }
+//    50% { transform: rotate(-7deg); }
+// }

@@ -1,0 +1,206 @@
+/* <h1>Buttons</h1>
+
+These 5 are OLD default buttons, should not be used anymore (2.5.2013)
+
+    <a href="" class="btn">Button</a>
+    <a href="" class="btn greyed">Button</a>
+    <a href="" class="btn greyed-active">Button</a>
+    <a href="" class="btn btn-disabled">Button</a>
+    <a href="" class="btn grey-btn">Button</a>
+*/
+
+
+.btn-fb {
+  font-family: "Lucida Grande",Tahoma,Verdana,Arial,Sans-serif;
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid $blue-darkest;
+  border-bottom-color: $blue-darkest;
+  background: $blue-darkest;
+  @include box-shadow(inset 0 1px 0 $blue-dark);
+  color: $white;
+  &:hover {
+    text-decoration: none;
+  }
+  &.greyed,
+  &.inactive {
+    border: 1px outset $grey-dark;
+    background: $grey-light;
+    color: $grey-dark;
+    @include box-shadow(none);
+
+  }
+  &.greyed-active {
+    border: 1px solid $grey-darker;
+    background: $grey-light;
+    @include box-shadow(0 1px 0 $grey-light);
+    color: $grey-darkest;
+  }
+}
+
+.btn-disabled {
+  background: $grey;
+  border: 1px inset $grey-light;
+  color: $grey-dark;
+  @include box-shadow(none);
+}
+
+/* NEW Base button, which is inherited by all other (new) buttons
+
+    <a href="" class="button">Button</a>
+*/
+.btn {
+  @include background-gradient($white, $grey-light);
+  @include border-radius(3px);
+  @include box-shadow(0px 0px 2px $grey-dark);
+  font-family: $fontfamily-thick;
+  font-size: 12px;
+  display: inline-block;
+  border: 1px solid $grey-darker;
+  padding: 4px 10px;
+  color: $black;
+  white-space: nowrap;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+  }
+  &.inactive {
+    @include background-gradient($grey, $grey-dark);
+    color: $grey-darker;
+    text-shadow: 0 1px 2px $grey;
+    letter-spacing: 0;
+    cursor: default;
+    &:hover {
+      @include background-gradient($grey, $grey-dark);
+    }
+  }
+}
+
+/* "Call to action" button, inherits from .button
+
+    <a href="" class="btn-cta">Button</a>
+*/
+.btn-cta {
+  @extend .btn;
+  @include background-gradient($blue, $blue-darker);
+  color: $white;
+  text-shadow: 0 1px 2px $black;
+  letter-spacing: 1px;
+  &:hover {
+    background: $blue;
+  }
+  
+}
+
+/* "Success" button, inherits from .button
+
+    <a href="" class="btn-yay">Button</a>
+*/
+.btn-yay {
+  @extend .btn;
+  @include background-gradient($green-dark, $green-darker);
+  color: $white;
+}
+
+/* "Fail" button, inherits from .button
+
+    <a href="" class="btn-nay">Button</a>
+*/
+.btn-nay {
+  @extend .btn;
+  @include background-gradient($red, $red-dark);
+  color: $white;
+}
+
+/* Specific Interested button, similar to btn-cta but with a bit of extra "wow" ;)
+
+    <a href="" class="btn-interested"><i class="icon-check" />Interested</a>
+    <a href="" class="btn-interested active"><i class="icon-check" />Interested</a>
+
+*/
+.btn-interested {
+  @extend .btn-cta;
+  padding: 4px 20px;
+  span {
+    display: none;
+  }
+  &.active {
+    @include background-gradient($pink, $pink-dark);
+    padding: 4px 12px;
+    color: $white;
+    span {
+      position: relative;
+      display: inline-block;
+      width: 16px;
+      height: 1em;
+    }
+    i {
+      font-size: 18px;
+      color: $white;
+      position: absolute;
+      left: -3px;
+      top: -4px;
+    }
+  }
+}
+
+/* Default button for form submit
+
+  <input class="btn-submit" />
+
+*/
+.btn-submit {
+  font-family: $fontfamily-thick;
+  text-align: center;
+  padding: 4px 8px;
+  position: relative;
+  cursor: pointer;
+  @include background-gradient($white,$grey);
+  border: 1px solid $grey;
+  text-shadow: 0 1px 1px $white;
+  color: $blue-darker;
+  @include border-radius(0); // <- Necessary for iOS which defaults rounded
+}
+
+/* Navigation button, used in Modals
+
+    <div class="modal-header">
+      <nav>
+        <a href="">Previous</a>
+        <a href="">Next</a>
+      </nav>
+    </div>
+
+*/
+.btn-navigation {
+  @extend .btn;
+  color: $blue-darker;
+}
+
+// temp button, needs to be standardized with our own colors later
+.btn-confirm_city {
+  @include background-gradient(#6CBDED, #3083BC);
+  @include border-radius(3px);
+  padding: 10px 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  border: 1px solid #257CBA;
+  color: $white;
+  white-space: nowrap;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+    background: #3083BC;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+  }
+}

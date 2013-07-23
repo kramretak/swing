@@ -1,0 +1,57 @@
+#signup-ranked {
+  top: 70px;
+  .modal-header {
+    padding: 2%;
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+    }
+  }
+  .modal-body {
+    @include border-radius(0 0 10px 10px);
+    padding: 2% 4%;
+    border-top-width: 0;
+    h3 {
+      text-shadow: 0 1px 0 $white;
+    }
+    p {
+      clear: left;
+      padding-top: 5px;
+      span, label {
+        @extend .txt-ss;
+        color: $grey-dark;
+      }
+      .btn,
+      .btn-fb {
+        float: right;
+      }
+    }
+  }
+  .loading-events {
+    .friend-name {
+      font-weight: bold;
+    }
+    #animate {
+      height: 300px;
+      width: 400px;
+      text-align: center;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  .next-card {
+    color: $blue-darkest;
+    line-height: 200%;
+  }
+  .blank-card {
+    margin: 40px;
+  }
+  #informational-text {
+    padding-top: 20px;
+    margin-left: -50px;
+    font-size: 16px;
+    color: $black;
+  }
+}

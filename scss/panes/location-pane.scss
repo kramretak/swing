@@ -1,0 +1,83 @@
+.location-pane {
+  .column {
+    figure {
+      margin-left: 8%;
+      width: 80%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  .column > figure {
+    margin-bottom: 10px;
+  }
+  .details > h5 {
+    margin: 10px 15px 0;
+  }
+  .details .btn-interested {
+    float: right;
+  }
+  .user-event {
+    @extend .clearfix;
+    color: inherit;
+    > {
+      figure {
+        float: left;
+        width: 15%;
+        margin-right: 2%;
+        img {
+          width: 100%;
+        }
+      }
+      article {
+        float: left;
+        width: 65%;
+        > h5 {
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $widthTablet) {
+  .location-pane {
+    .column {
+      float: none;
+      width: 100% !important;
+      > figure {
+        width: 43%;
+        margin: 0 5% 0 2%;
+        float: left;
+      }
+    }
+    header, section {
+      margin-left: 2%;
+    }
+    header > span.location {
+      margin-left: 0 !important;
+    }
+    > article {
+      clear: both;
+      width: 100% !important;
+      float: none;
+    }
+    .user-event {
+      article {
+        width: 80%;
+        padding-bottom: 3%;
+      }
+      .btn {
+        display: block;
+        width: 30%;
+        text-align: center;
+        float: none;
+        clear: both;
+        margin: 0 0 0 17%;
+      }
+    }
+  }
+}

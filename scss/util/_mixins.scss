@@ -1,0 +1,45 @@
+@mixin vendor($name, $argument) {
+  -webkit-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -o-#{$name}: $argument;
+  #{$name}: $argument;
+}
+/* Note: this new mixin will work for transparent as well */;
+@mixin background-gradient($a, $b) {
+  background: $b;
+  background: -webkit-linear-gradient(top, $a, $b);
+  background: -moz-linear-gradient(top, $a, $b);
+  background: -ms-linear-gradient(top, $a, $b);
+  background: -o-linear-gradient(top, $a, $b);
+  background: linear-gradient(top, $a, $b);
+}
+@mixin opacity($n) {
+  opacity: $n;
+  filter: unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round($n * 100) + ')');
+}
+@mixin border-radius($px) {
+  @include vendor('border-radius', $px)
+}
+@mixin box-shadow($px) {
+  @include vendor('box-shadow', $px);
+}
+@mixin background-clip($px) {
+  @include vendor('background-clip', $px);
+}
+@mixin text-rotate($deg) {
+  display: block;
+  @include vendor('transform', rotate($deg));
+}
+@mixin transition($transition) {
+  @include vendor('transition', $transition);
+}
+@mixin transition-delay($transition-delay) {
+  @include vendor('transition-delay', $transition);
+}
+@mixin transform ($transform) {
+  // note that Firefox no longer require prefixes (5/2013)
+  -webkit-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}

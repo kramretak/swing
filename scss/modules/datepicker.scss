@@ -1,0 +1,123 @@
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+#datepicker {
+  border-radius: 0;
+  border: 1px solid $grey-light;
+  white-space: nowrap;
+  cursor: pointer;
+  width: 90%;
+  input {
+    padding: 4px 0 3px 2px;
+    border: none;
+    width: 80%;
+  }
+  > div {
+    display: none;
+  }
+  &.selected {
+    background: $grey-light;
+    border: none;
+    width: 100%;
+    input {
+      font-family: $fontfamily-thick;
+      background: $grey-light;  
+    }
+  }
+  .add-on {
+    margin: 3px 1% 0 7%;
+  }
+  .icon-calendar {
+    display: inline-block;
+    cursor: pointer;
+    color: $blue-darker;
+  }
+  // Label is used for IE8 and lower, where a placeholder polyfill will add a label
+  label.placeholder {
+    top: 4px !important;
+  }
+}
+
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+  border-color: $grey-darker;
+  thead {
+    .months {
+      background: $blue-darker;
+      color: $white;
+      th {
+        font-weight: normal;
+        padding: 0 3px;
+      }
+      i {
+        color: $white;
+        font-size: 24px;
+        line-height: 20px;
+      }
+    }
+    .days {
+      background: $grey-light;
+      color: $blue-darker;
+      th {
+        border-bottom: 1px solid $grey;
+        font-size: .85em;
+        padding: 2px;
+      }
+    }
+  }
+  tfoot {
+    display: block;
+    padding: 3px;
+  }
+  td {
+    text-align: center;
+    padding: 2px 7px;
+    font-size: .9em;
+    &:hover {
+      background: $grey-light;
+    }
+    &.day {
+      cursor: pointer;
+    }
+    &.disabled {
+      color: $grey;
+      cursor: default;
+      &:hover { 
+        background: transparent;
+      }
+    }
+    &.active {
+      background: $grey;
+      font-weight: bold;
+      color: $grey-darker;
+    }
+
+  }
+}
+@media screen and (max-width: $widthTablet) {
+  #datepicker {
+    width: 100%;
+  }
+  .datepicker-dropdown {
+    margin-top: $headerHeightTablet;
+  }
+}
+@media screen and (max-width: $widthMiniTablet) {
+  .datepicker-dropdown {
+    margin-top: $headerHeightMiniTablet;
+  }
+}
+@media screen and (max-width: $widthSmartphone) {
+  .datepicker-dropdown {
+    margin-top: $headerHeightSmartphone;
+  }
+}
+

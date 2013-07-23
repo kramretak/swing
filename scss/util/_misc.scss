@@ -1,0 +1,70 @@
+.clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.hide {
+  display: none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Responsive hide/show classes */
+.visible-phone {
+  display: none !important;
+}
+.visible-tablet {
+  display: none !important;
+}
+.hidden-tablet {
+  color: inherit;
+}
+.hidden-desktop {
+  display: none;
+}
+.visible-desktop {
+  display: inherit !important;
+}
+
+@media screen and (max-width: $widthTablet) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: $widthMiniTablet) {
+  .hidden-desktop {
+    display: inherit;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+}
