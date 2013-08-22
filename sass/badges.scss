@@ -5,14 +5,14 @@ Badges
 Displaying a notification badge:
 
 Markup:
-    <div class="badge {modifiers}">10</div>
+    <div class="badge">10</div>
+    <div class="badge-info">10</div>
+    <div class="badge-important">10</div>
 
-.badge-info     - Displays blue info badge
-.badge-important  - Displays red info badge
-
-Styleguide 1.1
+Styleguide 2.1
 */
 .badge {
+  display: inline-block;
   @include border-radius(11px);
   background-color: $grey;
   font-size: 0.9em;
@@ -44,7 +44,17 @@ Styleguide 1.1
 /*
 Badge positioning helpers 
 
-Styleguide 1.1.1
+Add these classes to position the badge to a corner. Note that the badge's parent element should be contain the
+.relative helper class
+
+Markup:
+
+  <p><span class="relative">Hello world<span class="badge-info badge-tl">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-tr">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-bl">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-br">2</span></span></p>
+
+Styleguide 2.1.1
 */
 .badge-tl {
   position: absolute;

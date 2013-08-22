@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Swing CSS Library</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+</head>
+<body><div id="kss-wrapper">
+  <div id="kss-nav">
+    <header id="kss-header">
+      <hgroup><h1>Swing CSS Library</h1></hgroup>
+    </header>
+    <aside>
+      <nav>
+        <ul>
+        
+          <li><a href="section-1.html">1.0: Variables</a></li>
+        
+          <li><a href="section-2.html">2.0: Components</a></li>
+        
+          <li><a href="section-3.html">3.0: Forms</a></li>
+        
+        </ul>
+      </nav>
+    </aside>
+  </div>
+  <div role="main" id="kss-main">
+    <article id="kss-content">
+      
+        
+        
+          
+            <h1 class="kss-title"><span class="kss-ref">2.0</span> - Components</h1>
+          
+            
+                
+                  <p>Reusable items that can be used across the site.</p>
+
+                
+            
+           
+        
+          
+           <section class="kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.1</span> - Badges</h1>
+          
+            
+                <div class="kss-box"><p>Displaying a notification badge:</p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2">    <div class="badge">10</div>
+    <div class="badge-info">10</div>
+    <div class="badge-important">10</div></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">    &lt;div class=&quot;badge&quot;&gt;10&lt;/div&gt;
+    &lt;div class=&quot;badge-info&quot;&gt;10&lt;/div&gt;
+    &lt;div class=&quot;badge-important&quot;&gt;10&lt;/div&gt;</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+          
+           <section class="kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.1</span> - Badge positioning helpers </h1>
+          
+            
+                <div class="kss-box"><p>Add these classes to position the badge to a corner. Note that the badge&apos;s parent element should be contain the
+.relative helper class
+
+</p>
+  <p><span class="relative">Hello world<span class="badge-info badge-tl">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-tr">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-bl">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-br">2</span></span></p></div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2">Markup:</td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">Markup:</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+          
+           <section class="kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.2</span> - Buttons</h1>
+          
+            
+                <div class="kss-box"></div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2">    <a href="#" class="btn {modifiers}">Button</a>
+    <a href="#" class="btn-cta {modifiers}">Button</a>
+    <a href="#" class="btn-yay {modifiers}">Button</a>
+    <a href="#" class="btn-nay {modifiers}">Button</a></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Inactive/disabled version of the button</p>
+</td>
+                    <td class="kss-mod-name"><p>.inactive</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2">    <a href="#" class="btn {modifiers}">Button</a>
+    <a href="#" class="btn-cta {modifiers}">Button</a>
+    <a href="#" class="btn-yay {modifiers}">Button</a>
+    <a href="#" class="btn-nay {modifiers}">Button</a></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">    &lt;a href=&quot;#&quot; class=&quot;btn {modifiers}&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn-cta {modifiers}&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn-yay {modifiers}&quot;&gt;Button&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn-nay {modifiers}&quot;&gt;Button&lt;/a&gt;</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+      
+    </article>
+  </div>
+  <footer>
+    
+  </footer>
+  <!-- SCRIPTS -->
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var sidebarAdjust = function() {
+        // Match footer/body height
+        var height = Math.max($(window).height(), $('#kss-main').height());
+
+        if ($(window).width() <= 768) {
+          $('#kss-main, #kss-nav').height('auto');
+        } else {
+          $('#kss-main, #kss-nav').height(height);
+        }
+      };
+
+      $(window).resize(sidebarAdjust);
+      $(window).scroll(sidebarAdjust);
+      sidebarAdjust();
+
+      // Ensure code blocks are highlighted properly...
+      $('pre>code').addClass('prettyprint');
+      prettyPrint();
+
+    });
+  </script>
+
+</div></body>
+</html>

@@ -1,5 +1,5 @@
-@import 'hangtime';
-@import 'util';
+@import '_variables';
+@import '_util';
 
 
 @import 'layout/page';
@@ -7,24 +7,13 @@
 @import 'layout/sidebar';
 @import 'layout/modal';
 
-@import 'assets/icons';
-@import 'assets/badges';
-@import 'assets/buttons';
-@import 'assets/forms';
-@import 'assets/images';
-@import 'assets/lists';
 
-@import 'panes/add-friends';
-@import 'panes/categories';
-@import 'panes/timeline';
-@import 'panes/modal-content';
-@import 'panes/loading-pane';
-@import 'panes/event-pane';
-@import 'panes/user-pane';
-@import 'panes/location-pane';
-@import 'panes/signup';
-@import 'panes/signup-ranked';
-@import 'panes/notifications';
+@import 'icons';
+@import 'badges';
+@import 'buttons';
+@import 'forms';
+@import 'images';
+@import 'lists';
 
 @import 'modules/banner';
 @import 'modules/facepile';
@@ -34,10 +23,4 @@
 @import 'modules/dropdown';
 @import 'modules/tipsy';
 @import 'modules/datepicker';
-@import 'modules/corp-landing';
 @import 'modules/share_widget';
-
-@import 'refactor/confirm';
-@import 'refactor/sortme';
-
-@import 'util/msie';

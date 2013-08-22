@@ -1,45 +1,49 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
 
-  <title>KSS: Living Styleguide</title>
+  <title>Swing CSS Library</title>
   <meta name="description" content="">
   <meta name="generator" content="kss-node" />
 
   <meta name="viewport" content="width=device-width">
 
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="public/kss.css">
   <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
 </head>
 <body><div id="kss-wrapper">
   <div id="kss-nav">
     <header id="kss-header">
-      <hgroup><h1>kss-node Styleguide</h1></hgroup>
+      <hgroup><h1>Swing CSS Library</h1></hgroup>
     </header>
     <aside>
-      <nav><ul>
-        <li><a href="index.html">0.0: Overview</a></li>
+      <nav>
+        <ul>
         {{#eachRoot}}
           <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
         {{/eachRoot}}
-      </ul></nav>
+        </ul>
+      </nav>
     </aside>
   </div>
   <div role="main" id="kss-main">
     <article id="kss-content">
       {{#if overview}}
         {{html overview}}
+        <ul>
+        {{#eachRoot}}
+          <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
+        {{/eachRoot}}
+        </ul>
       {{else}}
-
         {{!
           Find each section, in order.
           If there's no markup or modifiers supplied, use a Markdown-only
@@ -121,12 +125,5 @@
     });
   </script>
 
-  {{! This won't be included in the demo page }}
-  {{#if argv.xdemo}}
-    <script type="text/javascript">
-    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-12249588-4']); _gaq.push(['_trackPageview']);
-    (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
-    </script>
-  {{/if}}
 </div></body>
 </html>

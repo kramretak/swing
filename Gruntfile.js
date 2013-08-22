@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'styles.doc.css': 'sass/styles.scss'
+                    'css/styles.css': 'sass/styles.scss'
                 }
             },
             production: {
@@ -25,13 +25,13 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'styles.css': 'sass/styles.scss'
+                    'css/styles.min.css': 'sass/styles.scss'
                 }
             }
         },
         shell: {
             styleguide: {
-                command: 'kss-node ./ styleguide --css ./styles.doc.css --template styleguide-template'
+                command: 'kss-node css styleguide --sass sass/styles.scss --template styleguide-template'
             }
         }
     });
