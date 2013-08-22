@@ -1,23 +1,23 @@
-/* <h1>Badges</h1>
+/* 
 
-Default badge:
+Badges
 
-    <div class="badge">10</div>
+Displaying a notification badge:
 
-Info badge:
+Markup:
+    <div class="badge {modifiers}">10</div>
 
-    <div class="badge-info">100</div>
+.badge-info			- Displays blue info badge
+.badge-important	- Displays red info badge
 
-Important badge:
-
-    <div class="badge-important">1000</div>
+Styleguide 1
 */
 .badge {
-  @include border-radius(11px);
-  background-color: $grey;
+  //@include border-radius(11px);
+  background-color: gray;
   font-size: 0.9em;
   font-weight: bold;
-  @include box-shadow(0 0 2px 2px $white);
+  //@include box-shadow(0 0 2px 2px $white);
   min-width: 18px;
   min-height: 18px;
   line-height: 18px;
@@ -29,15 +29,15 @@ Important badge:
 }
 .badge-info {
   @extend .badge;
-  background-color: $blue-info;
-  color: $white;
+  background-color: blue;
+  color: white;
 }
 .badge-important {
   @extend .badge;
-  background-color: $red-light;
-  color: $white;
+  background-color: red;
+  color: white;
   &:hover {
-    background-color: darken($red-light, 5%);
+    background-color: darken(red, 5%);
   }
 }
 
