@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Swing CSS Library</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+</head>
+<body><div id="kss-wrapper">
+  <div id="kss-nav">
+    <header id="kss-header">
+      <hgroup><h1>Swing CSS Library</h1></hgroup>
+    </header>
+    <aside>
+      <nav>
+        <ul>
+        
+          <li><a href="section-1.html">1.0: Variables</a></li>
+        
+          <li><a href="section-2.html">2.0: Components</a></li>
+        
+          <li><a href="section-3.html">3.0: Forms</a></li>
+        
+        </ul>
+      </nav>
+    </aside>
+  </div>
+  <div role="main" id="kss-main">
+    <article id="kss-content">
+      
+        
+        
+          
+            <h1 class="kss-title"><span class="kss-ref">1.0</span> - Variables</h1>
+          
+            
+                
+                  <p>Defines sitewide variables, colors and typography</p>
+
+                
+            
+           
+        
+          
+           <section class="kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">1.1</span> - Dimensions</h1>
+          
+            
+                
+                  <ul>
+<li>$numColumns: 24;</li>
+<li>$widthSmartphone: 320px;</li>
+<li>$widthMiniTablet: 568px;</li>
+<li>$widthTablet: 768px;</li>
+<li>$widthDesktop: 960px;</li>
+<li>$maxModalWidth: $widthDesktop * .85;</li>
+<li>$maxSmallModalWidth: $widthDesktop * .58;</li>
+<li>$pageTransitionTime: .3s;</li>
+<li>$sidebarWidthDesktop: 4.5;</li>
+<li>$sidebarWidthTablet: 10;</li>
+<li>$sidebarWidthMiniTablet: 15;</li>
+<li>$sidebarWidthSmartphone: 20;</li>
+<li>$headerHeightDesktop: 65px;</li>
+<li>$headerHeightTablet: 50px;</li>
+<li>$headerHeightMiniTablet: 50px;</li>
+<li>$headerHeightSmartphone: 50px;</li>
+</ul>
+<p>Please keep in mind that when making changes to these values, to update the documentation as well.</p>
+
+                
+            
+          
+            </section>
+          
+        
+          
+           <section class="kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">1.2</span> - Colors</h1>
+          
+            
+                <div class="kss-box"><p>Available color variables. Please use these variables instead of declaring your own hex or rgb(a) colors.</p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2">    <div class="badge" style="background: #FFF; border:1px solid #CCC;display:block;">$white</div>
+    <div class="badge" style="background: $black; border:1px solid #CCC; color:#FFF;display:block;">$black</div>
+    <div class="badge" style="background: #333; border:1px solid #CCC; color:#FFF;display:block;">$grey-darkest</div>
+    <div class="badge" style="background: #666; border:1px solid #CCC; color:#FFF;display:block;">$grey-darker</div>
+    <div class="badge" style="background: #999; border:1px solid #CCC; color:#FFF;display:block;">$grey-dark</div>
+    <div class="badge" style="background: #CCC; border:1px solid #CCC;display:block;">$grey</div>
+    <div class="badge" style="background: #EEE; border:1px solid #CCC;display:block;">$grey-light</div>
+    <div class="badge" style="background: #EFEFEF; border:1px solid #CCC;display:block;">$grey-lighter</div>
+    <div class="badge" style="background: #F7F7F7; border:1px solid #CCC;display:block;">$grey-lightest</div>
+    <div class="badge" style="background: #DDE9F3; border:1px solid #CCC;display:block;">$blue-lightest</div>
+    <div class="badge" style="background: #D8DDEE; border:1px solid #CCC;display:block;">$blue-lighter</div>
+    <div class="badge" style="background: #9AADCD; border:1px solid #CCC;display:block;">$blue-light</div>
+    <div class="badge" style="background: #4b93EE; border:1px solid #CCC;display:block;">$blue</div>
+    <div class="badge" style="background: #5C769E; border:1px solid #CCC; color:#FFF;display:block;">$blue-dark</div>
+    <div class="badge" style="background: #3B5998; border:1px solid #CCC; color:#FFF;display:block;">$blue-darker</div>
+    <div class="badge" style="background: #1a356e; border:1px solid #CCC; color:#FFF;display:block;">$blue-darkest</div>
+    <div class="badge" style="background: #34C1F5; border:1px solid #CCC;display:block;">$blue-bright</div>
+    <div class="badge" style="background: #3696FF; border:1px solid #CCC;display:block;">$blue-info</div>
+    <div class="badge" style="background: #D41F6C; border:1px solid #CCC;display:block;">$pink-dark</div>
+    <div class="badge" style="background: #EF5F9D; border:1px solid #CCC;display:block;">$pink</div>
+    <div class="badge" style="background: #A669D6; border:1px solid #CCC; color:#FFF;display:block;">$purple</div>
+    <div class="badge" style="background: #FFEBE8; border:1px solid #CCC;display:block;">$red-lightest</div>
+    <div class="badge" style="background: #EC4122; border:1px solid #CCC;display:block;">$red-light</div>
+    <div class="badge" style="background: #F00; border:1px solid #CCC;display:block;">$red</div>
+    <div class="badge" style="background: #E22B0A; border:1px solid #CCC;display:block;">$red-dark</div>
+    <div class="badge" style="background: #A31712; border:1px solid #CCC; color:#FFF;display:block;">$red-darkest</div>
+    <div class="badge" style="background: #E3F8DF; border:1px solid #CCC;display:block;">$green-lightest</div>
+    <div class="badge" style="background: #A0CE85; border:1px solid #CCC;display:block;">$green-lighter</div>
+    <div class="badge" style="background: #14CC6A; border:1px solid #CCC;display:block;">$green-light</div>
+    <div class="badge" style="background: #659300; border:1px solid #CCC;display:block;">$green</div>
+    <div class="badge" style="background: #298010; border:1px solid #CCC;display:block;">$green-dark</div>
+    <div class="badge" style="background: #006B7E; border:1px solid #CCC; color:#FFF;display:block;">$green-darker</div>
+    <div class="badge" style="background: #2D5200; border:1px solid #CCC; color:#FFF;display:block;">$green-darkest</div>
+    <div class="badge" style="background: #F9F5CD; border:1px solid #CCC;display:block;">$yellow-lighter</div>
+    <div class="badge" style="background: #FBE996; border:1px solid #CCC;display:block;">$yellow-light</div>
+    <div class="badge" style="background: #279BB0; border:1px solid #CCC; color:#FFF;display:block;">$turquoise</div></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">    &lt;div class=&quot;badge&quot; style=&quot;background: #FFF; border:1px solid #CCC;display:block;&quot;&gt;$white&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: $black; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$black&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #333; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$grey-darkest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #666; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$grey-darker&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #999; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$grey-dark&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #CCC; border:1px solid #CCC;display:block;&quot;&gt;$grey&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #EEE; border:1px solid #CCC;display:block;&quot;&gt;$grey-light&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #EFEFEF; border:1px solid #CCC;display:block;&quot;&gt;$grey-lighter&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #F7F7F7; border:1px solid #CCC;display:block;&quot;&gt;$grey-lightest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #DDE9F3; border:1px solid #CCC;display:block;&quot;&gt;$blue-lightest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #D8DDEE; border:1px solid #CCC;display:block;&quot;&gt;$blue-lighter&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #9AADCD; border:1px solid #CCC;display:block;&quot;&gt;$blue-light&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #4b93EE; border:1px solid #CCC;display:block;&quot;&gt;$blue&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #5C769E; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$blue-dark&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #3B5998; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$blue-darker&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #1a356e; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$blue-darkest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #34C1F5; border:1px solid #CCC;display:block;&quot;&gt;$blue-bright&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #3696FF; border:1px solid #CCC;display:block;&quot;&gt;$blue-info&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #D41F6C; border:1px solid #CCC;display:block;&quot;&gt;$pink-dark&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #EF5F9D; border:1px solid #CCC;display:block;&quot;&gt;$pink&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #A669D6; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$purple&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #FFEBE8; border:1px solid #CCC;display:block;&quot;&gt;$red-lightest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #EC4122; border:1px solid #CCC;display:block;&quot;&gt;$red-light&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #F00; border:1px solid #CCC;display:block;&quot;&gt;$red&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #E22B0A; border:1px solid #CCC;display:block;&quot;&gt;$red-dark&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #A31712; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$red-darkest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #E3F8DF; border:1px solid #CCC;display:block;&quot;&gt;$green-lightest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #A0CE85; border:1px solid #CCC;display:block;&quot;&gt;$green-lighter&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #14CC6A; border:1px solid #CCC;display:block;&quot;&gt;$green-light&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #659300; border:1px solid #CCC;display:block;&quot;&gt;$green&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #298010; border:1px solid #CCC;display:block;&quot;&gt;$green-dark&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #006B7E; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$green-darker&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #2D5200; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$green-darkest&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #F9F5CD; border:1px solid #CCC;display:block;&quot;&gt;$yellow-lighter&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #FBE996; border:1px solid #CCC;display:block;&quot;&gt;$yellow-light&lt;/div&gt;
+    &lt;div class=&quot;badge&quot; style=&quot;background: #279BB0; border:1px solid #CCC; color:#FFF;display:block;&quot;&gt;$turquoise&lt;/div&gt;</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+      
+    </article>
+  </div>
+  <footer>
+    
+  </footer>
+  <!-- SCRIPTS -->
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var sidebarAdjust = function() {
+        // Match footer/body height
+        var height = Math.max($(window).height(), $('#kss-main').height());
+
+        if ($(window).width() <= 768) {
+          $('#kss-main, #kss-nav').height('auto');
+        } else {
+          $('#kss-main, #kss-nav').height(height);
+        }
+      };
+
+      $(window).resize(sidebarAdjust);
+      $(window).scroll(sidebarAdjust);
+      sidebarAdjust();
+
+      // Ensure code blocks are highlighted properly...
+      $('pre>code').addClass('prettyprint');
+      prettyPrint();
+
+    });
+  </script>
+
+</div></body>
+</html>
