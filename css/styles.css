@@ -38,7 +38,7 @@ Available color variables. Please use these variables instead of declaring your 
 
 Markup:
     <div class="badge" style="background: #FFF; border:1px solid #CCC;display:block;">$white</div>
-    <div class="badge" style="background: $black; border:1px solid #CCC; color:#FFF;display:block;">$black</div>
+    <div class="badge" style="background: #000; border:1px solid #CCC; color:#FFF;display:block;">$black</div>
     <div class="badge" style="background: #333; border:1px solid #CCC; color:#FFF;display:block;">$grey-darkest</div>
     <div class="badge" style="background: #666; border:1px solid #CCC; color:#FFF;display:block;">$grey-darker</div>
     <div class="badge" style="background: #999; border:1px solid #CCC; color:#FFF;display:block;">$grey-dark</div>
@@ -1288,13 +1288,6 @@ header.header .dropdown .dropdown-options a:hover {
     position: static;
   }
 }
-/* 
-Components
-
-Reusable items that can be used across the site.
-
-Styleguide 2
-*/
 @font-face {
   font-family: 'myCustomFont';
   src: url("fonts/myCustomFont.eot");
@@ -1617,13 +1610,6 @@ Styleguide 2.2
   color: white;
 }
 
-/* 
-Forms
-
-Reusable items that can be used across the site.
-
-Styleguide 3
-*/
 /* <h1>Forms</h1>
 
     <form class="inline-box">
