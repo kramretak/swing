@@ -1,9 +1,37 @@
+/*
+Mixins
+
+util/_mixins.scss contains mixins, mostly around newer CSS3 properties. Use them by prefixing the mixin with "@include" (e.g. @include background-gradient(color1, color2) )<br /><br />
+
+
+  * <span class="class">transparent($color, $alpha)</span> - Transparent background, 2nd param = decimal transparency level
+  * <span class="class">background-gradient($a, $b)</span> - Top-down background gradient
+  * <span class="class">background-gradient-ltr($a, $b)</span> - Background gradient, left to right
+  * <span class="class">triple-gradient($a, $b, $c)</span> - Top-down background gradient with 3 colors
+  * <span class="class">opacity($n)</span> - Apply cross-browser 'opacity' style
+  * <span class="class">border-radius($px)</span> - Apply cross-browser 'border-radius'
+  * <span class="class">box-shadow($px)</span> - Apply cross-browser 'box-shadow'
+  * <span class="class">text-rotate($deg)</span> - Rotate text, param = degrees
+  * <span class="class">transition($transition)</span> - CSS3 Transition
+  * <span class="class">transform ($transform)</span> - CSS3 Transform
+
+Styleguide 2.2
+*/
+
 @mixin vendor($name, $argument) {
   -webkit-#{$name}: $argument;
   -moz-#{$name}: $argument;
   -ms-#{$name}: $argument;
   -o-#{$name}: $argument;
   #{$name}: $argument;
+}
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
 }
 /* Note: this new mixin will work for transparent as well */;
 @mixin background-gradient($a, $b) {
@@ -13,6 +41,27 @@
   background: -ms-linear-gradient(top, $a, $b);
   background: -o-linear-gradient(top, $a, $b);
   background: linear-gradient(top, $a, $b);
+}
+@mixin radial-gradient($a, $b) {
+  background: $b;
+  background: -webkit-radial-gradient(top, $a, $b);
+  background: -moz-radial-gradient(top, $a, $b);
+  background: -ms-radial-gradient(top, $a, $b);
+  background: -o-radial-gradient(top, $a, $b);
+  background: radial-gradient(top, $a, $b);
+}
+@mixin background-gradient-ltr($a, $b) {
+  background: $b;
+  background: -webkit-linear-gradient(left, $a, $b);
+  background: -moz-linear-gradient(left, $a, $b);
+  background: -ms-linear-gradient(left, $a, $b);
+  background: -o-linear-gradient(left, $a, $b);
+  background: linear-gradient(left, $a, $b);
+}
+@mixin triple-gradient($a, $b, $c) {
+  background-color: $b;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($a), to($c), color-stop(.5,$b));
+  background: -moz-linear-gradient(top, $a 0%, $b 50%, $c 100%);
 }
 @mixin opacity($n) {
   opacity: $n;
@@ -24,18 +73,12 @@
 @mixin box-shadow($px) {
   @include vendor('box-shadow', $px);
 }
-@mixin background-clip($px) {
-  @include vendor('background-clip', $px);
-}
 @mixin text-rotate($deg) {
   display: block;
   @include vendor('transform', rotate($deg));
 }
 @mixin transition($transition) {
   @include vendor('transition', $transition);
-}
-@mixin transition-delay($transition-delay) {
-  @include vendor('transition-delay', $transition);
 }
 @mixin transform ($transform) {
   // note that Firefox no longer require prefixes (5/2013)

@@ -1,0 +1,69 @@
+/* 
+Headings
+
+  * <span class="class">&lt;h1&gt;</span><h1 class="inline-block">Header 1</h1>
+  * <span class="class">&lt;h2&gt;</span><h2 class="inline-block">Header 2</h2>
+  * <span class="class">&lt;h3&gt;</span><h3 class="inline-block">Header 3</h3>
+  * <span class="class">&lt;h4&gt;</span><h4 class="inline-block">Header 4</h4>
+  * <span class="class">&lt;h5&gt;</span><h5 class="inline-block">Header 5</h5>
+  * <span class="class">&lt;h6&gt;</span><h6 class="inline-block">Header 6</h6>
+  * <span class="class">&lt;header&gt;&lt;h3&gt;&lt;/h3&gt;&lt;/header&gt;</span><header class="inline-block"><h3>Section header</h3></header>
+
+Styleguide 3.2
+*/
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+h1 {
+  font-size: 1.6em;
+}
+h2 {
+  font-size: 1.4em;
+}
+h3,
+.TextSmallDark {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1em;
+}
+h5 {
+  font-size: .9em;
+}
+h6 {
+  font-size: 0.85em;
+}
+// bold and in your face heading:
+.shout {
+  border-bottom: none;
+  color: #036;
+  font-family: $page-font-family-alt;
+  font-weight: bold;
+  padding: 1%;
+}
+// page headers
+header > h1 {
+  border-bottom: 1px solid $border-color-default;
+  margin-bottom: 1em;
+  padding-bottom: .5em;
+  &.shout {
+    font-size: 2.5em;
+    margin-bottom: 0;
+    text-align: center;
+    @media screen and (max-width: $page-width-tablet) {
+      font-size: 2em;
+    }
+    @media screen and (max-width: $page-width-mini-tablet) {
+      font-size: 1.3em;
+    }
+  }
+}
+// blue header, white font
+header > h3 {
+  background: $heading-blue;
+  color: $white;
+  text-align: center;
+  padding: 2%;
+}

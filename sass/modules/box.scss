@@ -1,0 +1,26 @@
+/*
+Box
+
+The "box" classes are used in cases where you need a simple bounding box.
+
+Markup:
+<div class="primary-box" style="width:200px; height: 50px">.primary-box</div>
+<div class="secundary-box" style="width:200px; height: 50px; margin-top: 10px;">.secundary-box</div>
+
+Styleguide 4.1
+*/
+
+.box {
+  border: 1px solid $border-color-default;
+  @include transition(all .5s ease-out);
+  @extend .clearfix;
+}
+.primary-box {
+  @extend .box;
+  background: $box-primary-bg;
+}
+.secundary-box {
+  @extend .box;
+  background: $box-secundary-bg;
+}
+

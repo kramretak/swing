@@ -1,0 +1,70 @@
+/*
+Breadcrumb
+
+Markup:
+<ul class="breadcrumb">
+  <li class="selected"><a href="#">Selected</a><a class="badge" href="#"">X</a></li>
+  <li><a href="#">Product</a></li>
+</ul>
+
+Styleguide 4.3
+*/
+
+.breadcrumb {
+  @extend .clearfix;
+  @media screen and (max-width: $page-width-mini-tablet) {
+    margin-bottom: 2px;
+  }
+  @media screen and (min-width: $page-width-mini-tablet+1) {
+    border: 1px solid $border-color-default;
+    border-bottom: none;
+  }
+  li {
+    @include col(12);
+    background: $gray;
+    font-size: 14px;
+    position: relative;
+    white-space: nowrap;
+    &:nth-child(2) > a:first-child {
+      border-left: 1px solid #FFF;
+      padding-left: 10px;
+    }
+    &.empty {
+      background: lighten($gray, 10);
+      color: darken($gray,20);
+      &:after {
+        border-left-color: lighten($border-color-default, 10);
+      }
+    }
+    a {
+      display: inline-block;
+      padding: 4%;
+      &:first-child {
+        @extend .ellipsis-inline;
+        width: 95%;
+        @media screen and (max-width: $page-width-mini-tablet) {
+          width: 75%;
+        }
+      }
+    }
+    &.selected {
+      background: $selected-highlight;
+    }
+  }
+  .badge {
+    background: lighten($button-bg-default, 10);
+    color: $page-text-color;
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    @media screen and (min-width: $page-width-smartphone-landscape) {
+      top: 8px;
+    }
+    @media screen and (min-width: $page-width-mini-tablet) {
+      display: none;
+    }
+  }
+}

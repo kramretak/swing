@@ -1,0 +1,786 @@
+/* 
+Application Settings
+
+The CSS is built "responsively", meaning that it will behave differently on different screen sizes, using the same codebase. In order to keep the different behavior across devices / screen sizes maintainable, the CSS is divided up into 5 screen size "tiers":
+
+
+  * <span class="class">$page-width-smartphone</span>All screens with a width up to 360px
+  * <span class="class">$page-width-smartphone-landscape</span>Smartphones in Landscape mode - Screens up to 480px
+  * <span class="class">$page-width-mini-tablet</span>Large smartphones and Mini Tablets - Up to 568px
+  * <span class="class">$page-width-tablet</span>Tablets Screens up to 768px
+  * <span class="class">$page-width-desktop</span>Tablets in Landscape and everything Desktop sized, 960px and up
+  * <span class="class">$grid-total-columns</span>Set to 24 columns
+  * <span class="class">$animation-transition-time</span>By default, CSS transitions will run for 0.3 seconds.
+  * <span class="class">$page-font-family</span>Default font family, set to "Trebuchet", "Lucida Grande"
+  * <span class="class">$page-font-family-alt</span>Alternative font family, set to "Arial", "Helvetica Neue"
+  * <span class="class">$page-font-size</span>Default font size, set to 14px.
+
+Styleguide 1.1
+*/
+/* 
+Colors
+
+Available color variables. Please use these variables instead of declaring your own hex or rgb(a) colors, in order to promote consistency across the site.<br/><br/>
+
+  * <div class="badge" style="width: 250px; font-size:14px;background: #C3C6CB;">$page-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #252525; color: #FFF;">$page-text-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #304E79; color: #FFF;">$page-link-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FFF;">$page-header-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #EEF1F8;">$main-content-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #9FB3D7;">$heading-blue</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #C5DF9B;">$selected-highlight</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #AAA;">$footer-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FFF;">$white</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #CCC;">$gray</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #CCC;">$button-bg-default</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #3F94F6;">$button-bg-cta</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #CCC;">$border-color-default</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FFF;">$box-primary-bg</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FEFEFE;">$box-secundary-bg</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #659300;">$success</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #F60;">$notice</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #F00;">$alert</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #3696FF;">$info</div>
+
+Styleguide 1.2
+*/
+/*
+Grids
+
+The grid system is a collection of mixins that allow for an easy grid layout, divided into 24 virtual columns, which will be floated side by side. In almost all cases, you should aim for having a total of 24 columns in your grid layout. For example: col(12) translates to a column with a width of 50% of its container.<br /><br />
+
+  * <span class="class">col($n)</span>Define the width of your element, by passing this the number of desired columns.
+  * <span class="class">col-right($n)</span>Same as col(), but the column will be floated to the right instead of the default left.
+  * <span class="class">width($n)</span>Same as col(), but the column will be not be floated at all.
+  * <span class="class">prepend($n)</span>Prepend n blank columns.
+  * <span class="class">append($n)</span>Append n blank columns.
+
+Styleguide 2.1
+*/
+/*
+Mixins
+
+util/_mixins.scss contains mixins, mostly around newer CSS3 properties. Use them by prefixing the mixin with "@include" (e.g. @include background-gradient(color1, color2) )<br /><br />
+
+
+  * <span class="class">transparent($color, $alpha)</span> - Transparent background, 2nd param = decimal transparency level
+  * <span class="class">background-gradient($a, $b)</span> - Top-down background gradient
+  * <span class="class">background-gradient-ltr($a, $b)</span> - Background gradient, left to right
+  * <span class="class">triple-gradient($a, $b, $c)</span> - Top-down background gradient with 3 colors
+  * <span class="class">opacity($n)</span> - Apply cross-browser 'opacity' style
+  * <span class="class">border-radius($px)</span> - Apply cross-browser 'border-radius'
+  * <span class="class">box-shadow($px)</span> - Apply cross-browser 'box-shadow'
+  * <span class="class">text-rotate($deg)</span> - Rotate text, param = degrees
+  * <span class="class">transition($transition)</span> - CSS3 Transition
+  * <span class="class">transform ($transform)</span> - CSS3 Transform
+
+Styleguide 2.2
+*/
+/* Note: this new mixin will work for transparent as well */
+/*
+Miscellaneous
+
+util/_misc.scss contains helper classes that are commonly used:<br/><br/>
+
+
+  * <span class="class">.clearfix</span> - apply this to the parent container of floated elements, in order to clear the float.
+  * <span class="class">.clear</span> - apply this to clear a previously floated sibling element.
+  * <span class="class">.hide</span> - applies "display: none"
+  * <span class="class">.left</span> - float an element to the left
+  * <span class="class">.right</span> - float an element to the right
+  * <span class="class">.center</span> - center position an element (note, this is NOT the same as .txt-center)
+  * <span class="class">.relative</span> - apply 'position:relative' to an element
+  * <span class="class">.padded</span> - apply 2% padding to an element
+  * <span class="class">.visible-phone</span> - Show an element ONLY on a smartphone-wide device
+  * <span class="class">.visible-tablet</span> - Show an element ONLY on a tablet-wide device
+  * <span class="class">.hidden-tablet</span> - Hide an element on tablet-wide devices and larger
+  * <span class="class">.hidden-desktop</span> -  Hide an element on desktop-wide devices and larger
+  * <span class="class">.visible-desktop</span> - Show an element ONLY on a desktop-wide device
+
+Styleguide 2.3
+*/
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.hide,
+.Hide {
+  display: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.padded {
+  padding: 2%;
+}
+
+/* Responsive hide/show classes */
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-tablet {
+  color: inherit;
+}
+
+.hidden-desktop {
+  display: none;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+
+@media screen and (max-width: 768px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+
+  .visible-desktop {
+    display: none !important;
+  }
+
+  .visible-tablet {
+    display: inherit !important;
+  }
+
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 568px) {
+  .hidden-desktop {
+    display: inherit;
+  }
+
+  .visible-desktop {
+    display: none !important;
+  }
+
+  .visible-phone {
+    display: inherit !important;
+  }
+
+  .hidden-phone {
+    display: none !important;
+  }
+}
+@font-face {
+  font-family: 'responsive';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg6xAzIAAAC8AAAAYGNtYXDL/xqXAAABHAAAADxnYXNwAAAAEAAAAVgAAAAIZ2x5ZhlfRcIAAAFgAAACSGhlYWQA3bPsAAADqAAAADZoaGVhCAsEDwAAA+AAAAAkaG10eAqSAAAAAAQEAAAAFGxvY2EA0AGGAAAEGAAAAAxtYXhwAAoASAAABCQAAAAgbmFtZWvCFGAAAAREAAABVHBvc3QAAwAAAAAFmAAAACAAAwQAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAACDmCAPA/8D/wAPAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACgAAAAGAAQAAQACACDmCP//AAAAIOYG////4Rn8AAEAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAMAAABJApIDbgAQACUAOgAAJTQnJiMiBwYVFBcWMzI3NjU3ETQnJiMhIgcGFREUFxYzITI3NjUTERQHBiMhIicmNRE0NzYzITIXFhUBbgsLDw8LCgoLDw8LC9sFBgf+JAcFBgYFBwHcBwYFSRsaJv4kJRsbGxslAdwmGhuSDwsLCwsPDwoLCwoPXAIkCAUGBgUI/dwIBQYGBQgCJP2TJhsbGxsmAm0mGxsbGyYAAAAABAAAAEkBtwMlABAAJQAwAEUAACU0JyYjIgcGFRQXFjMyNzY1NxE0JyYjISIHBhURFBcWMyEyNzY1AzQrASIVFDsBMjU3ERQHBiMhIicmNRE0NzYzITIXFhUBCQ0OExIODQ0OEhMODXcFBgf+2wcGBQUGBwElBwYFbglbCQlbCaUWFh3+2x4VFhYVHgElHRYWkhMODQ0OExMNDQ0NE1wBkgcGBQUGB/5uCAUGBgUIAeQJCQkJCf23HRYWFhYdAkkeFhYWFh4AAAACAAAAAARJA7cAFAA/AAABETQnJiMhIgcGFREUFxYzITI3NjUTERQHBiMhFBcWFxYVFAcGIyEiJyY1NDc2NzY1ISInJjURNDc2MyEyFxYVBAAFBgf8bQcFBgYFBwOTBwYFSRsbJf7JCQkJCQoLD/7bDwoLCQkJCf7JJRsbGxslA5MlGxsBgAHbCAUGBgUI/iUHBgUFBgcB2/2TJhsbFRcXEhEHDwsLCwsPCBERFxcVGxsmAm0mGxsbGyYAAAEAAAABAABV4671Xw889QALBAAAAAAAzrs3nAAAAADOuzecAAAAAARJA7cAAAAIAAIAAAAAAAAAAQAAA8D/wAAABEkAAAAABEkAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAgAAAAKSAAABtwAABEkAAAAAAAAACgBiAMYBJAABAAAABQBGAAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEAFAAAAAEAAAAAAAIADgBcAAEAAAAAAAMAFAAqAAEAAAAAAAQAFABqAAEAAAAAAAUAFgAUAAEAAAAAAAYACgA+AAEAAAAAAAoAKAB+AAMAAQQJAAEAFAAAAAMAAQQJAAIADgBcAAMAAQQJAAMAFAAqAAMAAQQJAAQAFABqAAMAAQQJAAUAFgAUAAMAAQQJAAYAFABIAAMAAQQJAAoAKAB+AHIAZQBzAHAAbwBuAHMAaQB2AGUAVgBlAHIAcwBpAG8AbgAgADAALgAwAHIAZQBzAHAAbwBuAHMAaQB2AGVyZXNwb25zaXZlAHIAZQBzAHAAbwBuAHMAaQB2AGUAUgBlAGcAdQBsAGEAcgByAGUAcwBwAG8AbgBzAGkAdgBlAEcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format("truetype"), url(data:application/font-woff;charset=utf-8;base64,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) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #c3c6cb;
+  color: #252525;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+#wrapper {
+  -webkit-transition: height 240ms ease,width 240ms ease,margin 240ms ease;
+  -moz-transition: height 240ms ease,width 240ms ease,margin 240ms ease;
+  -ms-transition: height 240ms ease,width 240ms ease,margin 240ms ease;
+  -o-transition: height 240ms ease,width 240ms ease,margin 240ms ease;
+  transition: height 240ms ease,width 240ms ease,margin 240ms ease;
+  -webkit-transform: translate3d(0, 0, 0);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#wrapper iframe::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper iframe::-moz-scrollbar {
+  display: none;
+}
+
+#wrapper iframe {
+  width: 100%;
+  height: 99%;
+  margin-top: 1%;
+}
+
+#wrapper.noTransitions {
+  -webkit-transition: 0;
+  -moz-transition: 0;
+  -ms-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+
+#kss-nav {
+  float: left;
+  width: 16.66667%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 2.08333%;
+  margin-top: 2%;
+  background-color: #e3e3e3;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  -ms-border-radius: 10px 0 0 10px;
+  -o-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 0 5px 1px #000;
+}
+#kss-nav nav > ol,
+#kss-nav nav > ul {
+  margin: 1.5em 0 1.5em 3em;
+  padding: 0;
+}
+#kss-nav nav > ol li,
+#kss-nav nav > ul li {
+  padding: 4px 0;
+  border-radius: 3px;
+  transition: all .3s;
+}
+#kss-nav nav > ol li:hover,
+#kss-nav nav > ul li:hover {
+  background: #fff;
+}
+#kss-nav nav > ol a,
+#kss-nav nav > ul a {
+  text-decoration: none;
+  color: #000098;
+}
+#kss-nav h1 {
+  font-size: 1.2em;
+  margin: 2% 0 0 0;
+  text-align: center;
+}
+#kss-nav .logo {
+  display: block;
+  width: 90%;
+  margin: 2% auto;
+}
+#kss-nav .logo img {
+  width: 100%;
+}
+
+#kss-main {
+  float: left;
+  width: 79.16667%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.sections,
+#size,
+#devices {
+  background: #222223;
+  background: -webkit-linear-gradient(top, #202021, #222223);
+  background: -moz-linear-gradient(top, #202021, #222223);
+  background: -ms-linear-gradient(top, #202021, #222223);
+  background: -o-linear-gradient(top, #202021, #222223);
+  background: linear-gradient(top, #202021, #222223);
+  -webkit-box-shadow: 0 1px 0 #363738;
+  -moz-box-shadow: 0 1px 0 #363738;
+  -ms-box-shadow: 0 1px 0 #363738;
+  -o-box-shadow: 0 1px 0 #363738;
+  box-shadow: 0 1px 0 #363738;
+  color: #EEE;
+  border: 1px solid #040404;
+  padding: 9px 12px 7px;
+  margin: 9px 0 0 8px;
+  min-width: 80px;
+  display: block;
+}
+
+.sections {
+  position: fixed;
+  right: 0;
+  top: 10px;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  -ms-border-radius: 10px 0 0 10px;
+  -o-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
+}
+.sections li {
+  border-bottom: 1px dashed #FFF;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+}
+.sections li:first-child {
+  display: none;
+}
+.sections a {
+  color: #FFF;
+}
+
+#size {
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  -ms-border-radius: 10px 0 0 10px;
+  -o-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
+  -webkit-transition: padding 240ms ease;
+  -moz-transition: padding 240ms ease;
+  -ms-transition: padding 240ms ease;
+  -o-transition: padding 240ms ease;
+  transition: padding 240ms ease;
+  position: fixed;
+  bottom: 10px;
+  right: 2%;
+  margin-right: 2px;
+}
+
+#devices {
+  float: left;
+  width: 16.66667%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 2.08333%;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  -ms-border-radius: 10px 0 0 10px;
+  -o-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
+  position: fixed;
+  bottom: 10px;
+}
+#devices li {
+  display: inline;
+}
+#devices a {
+  margin: 0 2%;
+  color: #DDD;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition: top 240ms ease;
+  -moz-transition: top 240ms ease;
+  -ms-transition: top 240ms ease;
+  -o-transition: top 240ms ease;
+  transition: top 240ms ease;
+}
+#devices a:hover {
+  top: -3px;
+}
+#devices a:active {
+  font-weight: normal;
+}
+#devices a.active {
+  color: #FFF;
+}
+#devices a.active:hover {
+  top: 0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'responsive';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2em;
+  text-align: center;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+.icon-landscape {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.icon-tablet:before {
+  content: "\e606";
+}
+
+.icon-phone:before {
+  content: "\e607";
+}
+
+.icon-desktop:before {
+  content: "\e608";
+}
+
+/************************* KSS Styles ****************************/
+#kss-header h1 {
+  font-size: 1.5em;
+  margin-top: 5/3em;
+  margin-left: 4/3em;
+}
+
+h1.kss-title {
+  font-size: 1.5em;
+  background: #FFF;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px #333;
+}
+
+h2.kss-title {
+  margin: 10px;
+  border: 2px solid #666;
+  border-radius: 8px;
+  background: #EEE;
+  padding: 5px;
+}
+
+h4.kss-title {
+  float: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+h5.kss-title {
+  float: right;
+  display: inline;
+  line-height: 14px;
+  margin-right: 5px;
+  padding: 3px 5px;
+  background-color: #FBEDC9;
+  border: 1px solid #333;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.kss-mod-list {
+  width: 100%;
+}
+
+#kss-content > header > h1 {
+  background: #333333;
+  background: -webkit-linear-gradient(top, #666666, #333333);
+  background: -moz-linear-gradient(top, #666666, #333333);
+  background: -ms-linear-gradient(top, #666666, #333333);
+  background: -o-linear-gradient(top, #666666, #333333);
+  background: linear-gradient(top, #666666, #333333);
+  color: #FFF;
+  padding-top: .5em;
+  text-align: center;
+}
+#kss-content .class {
+  font-family: "Courier";
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
+}
+
+.kss-mod-name {
+  text-align: right;
+  width: 20%;
+  font-size: 0.75em;
+}
+
+.kss-mod-example {
+  padding-bottom: 20px;
+  display: block;
+}
+.kss-mod-example > td {
+  display: block;
+}
+
+.kss-box p {
+  margin: 0 0 1em 0;
+}
+
+.kss-markup,
+.kss-output {
+  clear: both;
+  margin-bottom: 15px;
+}
+.kss-markup pre,
+.kss-output pre {
+  background-color: #EEE;
+}
+.kss-markup > div,
+.kss-output > div {
+  border-top: 1px solid #333;
+  padding-top: 5px;
+}
+
+.kss-output {
+  padding: 0 5px;
+}
+
+.kss-modifier {
+  color: #FFF;
+  font-family: Courier;
+  float: right;
+  margin-right: 15px;
+  padding: 3px;
+  background: #333;
+  width: 100px;
+  text-align: center;
+}
+
+.kss-markup {
+  max-height: 105px;
+  overflow: auto;
+  border-top: 1px solid #333;
+  cursor: pointer;
+}
+
+/* Pretty printing styles. Used with prettify.js. */
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln {
+  color: black;
+}
+
+/* plain text */
+@media screen {
+  .str {
+    color: #008800;
+  }
+
+  /* string content */
+  .kwd {
+    color: #000088;
+  }
+
+  /* a keyword */
+  .com {
+    color: #880000;
+  }
+
+  /* a comment */
+  .typ {
+    color: #660066;
+  }
+
+  /* a type name */
+  .lit {
+    color: #006666;
+  }
+
+  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo {
+    color: #666600;
+  }
+
+  .tag {
+    color: #000088;
+  }
+
+  /* a markup tag name */
+  .atn {
+    color: #660066;
+  }
+
+  /* a markup attribute name */
+  .atv {
+    color: #008800;
+  }
+
+  /* a markup attribute value */
+  .dec, .var {
+    color: #660066;
+  }
+
+  /* a declaration; a variable name */
+  .fun {
+    color: red;
+  }
+
+  /* a function name */
+}
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str {
+    color: #006600;
+  }
+
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  .lit {
+    color: #004444;
+  }
+
+  .pun, .opn, .clo {
+    color: #444400;
+  }
+
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  .atn {
+    color: #440044;
+  }
+
+  .atv {
+    color: #006600;
+  }
+}
+/* Put a border around prettyprinted code snippets. */
+/*pre.prettyprint { padding: 2px; border: 1px solid #888 }*/
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+  list-style-type: none;
+}
+
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+  background: #eeeeee;
+}
+
+.smartphonePortrait {
+  background-image: url("public/img/iphone5.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 384px;
+  padding-top: 120px;
+  min-height: 800px;
+}
+
+.smartphoneLandscape {
+  background-image: url("public/img/iphone5-landscape.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 802px;
+  padding-top: 28px;
+  min-height: 400px;
+}
+
+.tabletPortrait {
+  background-image: url("public/img/ipad.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 886px;
+  padding-top: 118px;
+  min-height: 1400px;
+}
+
+.tabletLandscape {
+  background-image: url("public/img/ipad-landscape.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 1252px;
+  padding-top: 58px;
+  min-height: 1000px;
+}

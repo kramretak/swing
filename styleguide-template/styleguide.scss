@@ -1,0 +1,420 @@
+@import '../sass/variables/_settings.scss';
+@import '../sass/variables/_colors.scss';
+@import '../sass/_util.scss';
+
+@font-face {
+  font-family: 'responsive';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg6xAzIAAAC8AAAAYGNtYXDL/xqXAAABHAAAADxnYXNwAAAAEAAAAVgAAAAIZ2x5ZhlfRcIAAAFgAAACSGhlYWQA3bPsAAADqAAAADZoaGVhCAsEDwAAA+AAAAAkaG10eAqSAAAAAAQEAAAAFGxvY2EA0AGGAAAEGAAAAAxtYXhwAAoASAAABCQAAAAgbmFtZWvCFGAAAAREAAABVHBvc3QAAwAAAAAFmAAAACAAAwQAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAACDmCAPA/8D/wAPAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACgAAAAGAAQAAQACACDmCP//AAAAIOYG////4Rn8AAEAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAMAAABJApIDbgAQACUAOgAAJTQnJiMiBwYVFBcWMzI3NjU3ETQnJiMhIgcGFREUFxYzITI3NjUTERQHBiMhIicmNRE0NzYzITIXFhUBbgsLDw8LCgoLDw8LC9sFBgf+JAcFBgYFBwHcBwYFSRsaJv4kJRsbGxslAdwmGhuSDwsLCwsPDwoLCwoPXAIkCAUGBgUI/dwIBQYGBQgCJP2TJhsbGxsmAm0mGxsbGyYAAAAABAAAAEkBtwMlABAAJQAwAEUAACU0JyYjIgcGFRQXFjMyNzY1NxE0JyYjISIHBhURFBcWMyEyNzY1AzQrASIVFDsBMjU3ERQHBiMhIicmNRE0NzYzITIXFhUBCQ0OExIODQ0OEhMODXcFBgf+2wcGBQUGBwElBwYFbglbCQlbCaUWFh3+2x4VFhYVHgElHRYWkhMODQ0OExMNDQ0NE1wBkgcGBQUGB/5uCAUGBgUIAeQJCQkJCf23HRYWFhYdAkkeFhYWFh4AAAACAAAAAARJA7cAFAA/AAABETQnJiMhIgcGFREUFxYzITI3NjUTERQHBiMhFBcWFxYVFAcGIyEiJyY1NDc2NzY1ISInJjURNDc2MyEyFxYVBAAFBgf8bQcFBgYFBwOTBwYFSRsbJf7JCQkJCQoLD/7bDwoLCQkJCf7JJRsbGxslA5MlGxsBgAHbCAUGBgUI/iUHBgUFBgcB2/2TJhsbFRcXEhEHDwsLCwsPCBERFxcVGxsmAm0mGxsbGyYAAAEAAAABAABV4671Xw889QALBAAAAAAAzrs3nAAAAADOuzecAAAAAARJA7cAAAAIAAIAAAAAAAAAAQAAA8D/wAAABEkAAAAABEkAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAgAAAAKSAAABtwAABEkAAAAAAAAACgBiAMYBJAABAAAABQBGAAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEAFAAAAAEAAAAAAAIADgBcAAEAAAAAAAMAFAAqAAEAAAAAAAQAFABqAAEAAAAAAAUAFgAUAAEAAAAAAAYACgA+AAEAAAAAAAoAKAB+AAMAAQQJAAEAFAAAAAMAAQQJAAIADgBcAAMAAQQJAAMAFAAqAAMAAQQJAAQAFABqAAMAAQQJAAUAFgAUAAMAAQQJAAYAFABIAAMAAQQJAAoAKAB+AHIAZQBzAHAAbwBuAHMAaQB2AGUAVgBlAHIAcwBpAG8AbgAgADAALgAwAHIAZQBzAHAAbwBuAHMAaQB2AGVyZXNwb25zaXZlAHIAZQBzAHAAbwBuAHMAaQB2AGUAUgBlAGcAdQBsAGEAcgByAGUAcwBwAG8AbgBzAGkAdgBlAEcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('truetype'),
+     url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $page-background-color;
+  color: $page-text-color;
+  font-family: $page-font-family;
+  font-size: $page-font-size;
+  box-sizing: border-box;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0
+}
+caption,th,td {
+  text-align:left;
+  font-weight:normal;
+  vertical-align:middle
+}
+q,blockquote {
+  quotes:none
+}
+q:before,q:after,blockquote:before,blockquote:after {
+  content:"";
+  content:none
+}
+a img {
+  border:none
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+  display:block
+}
+
+#wrapper {
+  -webkit-transition:height 240ms ease,width 240ms ease,margin 240ms ease;
+  -moz-transition:height 240ms ease,width 240ms ease,margin 240ms ease;
+  -ms-transition:height 240ms ease,width 240ms ease,margin 240ms ease;
+  -o-transition:height 240ms ease,width 240ms ease,margin 240ms ease;
+  transition:height 240ms ease,width 240ms ease,margin 240ms ease;
+  -webkit-transform:translate3d(0, 0, 0);
+  position:relative;
+  width:100%;
+  height:100%;
+  display:block;
+  margin:0 auto
+}
+#wrapper iframe::-webkit-scrollbar {
+  display:none
+}
+#wrapper iframe::-moz-scrollbar {
+  display:none
+}
+#wrapper iframe {
+  width:100%;
+  height:99%;
+  margin-top: 1%;
+}
+#wrapper.noTransitions {
+  -webkit-transition:0;
+  -moz-transition:0;
+  -ms-transition:0;
+  -o-transition:0;
+  transition:0
+}
+
+#kss-nav {
+  @include col(4);
+  @include prepend(.5);
+  margin-top: 2%;
+  background-color:#e3e3e3;
+  @include border-radius(10px 0 0 10px);
+  box-shadow: 0 0 5px 1px #000;
+  nav>ol,
+  nav>ul {
+    margin:1.5em 0 1.5em 3em;
+    padding: 0;
+    li {
+      padding: 4px 0;
+      border-radius: 3px;
+      transition: all .3s;
+      &:hover {
+        background: #fff;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #000098;
+    }
+  }
+  h1 {
+    font-size: 1.2em;
+    margin: 2% 0 0 0;
+    text-align: center;
+  }
+  .logo {
+    display: block;
+    width: 90%;
+    margin: 2% auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+#kss-main {
+  @include col(19);
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.sections,
+#size,
+#devices {
+  @include background-gradient(#202021,#222223);
+  @include box-shadow(0 1px 0 #363738);
+  color:#EEE;
+  border:1px solid #040404;
+  padding:9px 12px 7px;
+  margin:9px 0 0 8px;
+  min-width:80px;
+  display:block;
+
+}
+.sections {
+  position: fixed;
+  right: 0;
+  top: 10px;
+  @include border-radius(10px 0 0 10px);
+  li {
+    border-bottom: 1px dashed #FFF;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    &:first-child {
+      display: none;
+    }
+  }
+  a {
+    color: #FFF;
+  }
+}
+#size {
+  @include border-radius(10px 0 0 10px);
+  @include transition(padding 240ms ease);
+  position: fixed;
+  bottom: 10px;
+  right: 2%;
+  margin-right: 2px;
+}
+#devices {
+  @include col(4);
+  @include prepend(.5);
+  @include border-radius(10px 0 0 10px);
+  position: fixed;
+  bottom: 10px; 
+  li {
+    display: inline;
+  }
+  a {
+    margin: 0 2%;
+    color: #DDD;
+    position: relative;
+    text-decoration: none;
+    @include transition(top 240ms ease);
+    &:hover {
+      top: -3px;
+    }
+    &:active {
+      font-weight: normal;
+    }
+    &.active {
+      color: #FFF;
+      &:hover {
+        top: 0;
+      }
+    }
+  }
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'responsive';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2em;
+  text-align: center;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+.icon-landscape {
+  @include transform(rotate(90deg));
+}
+
+.icon-tablet:before {
+  content: "\e606";
+}
+.icon-phone:before {
+  content: "\e607";
+}
+.icon-desktop:before {
+  content: "\e608";
+}
+
+/************************* KSS Styles ****************************/
+#kss-header h1 {
+  font-size:1.5em;
+  margin-top:5/3em;
+  margin-left:4/3em;
+}
+
+h1.kss-title {
+  font-size:1.5em;
+  background: #FFF;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px #333;
+}
+h2.kss-title {
+  margin: 10px;
+  border: 2px solid #666;
+  border-radius: 8px;
+  background: #EEE;
+  padding: 5px;
+}
+h4.kss-title  {
+  float: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-left: 5px;
+}
+h5.kss-title {
+  float: right;
+  display: inline;
+  line-height: 14px;
+  margin-right: 5px;
+  padding: 3px 5px;
+  background-color: #FBEDC9;
+  border: 1px solid #333;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.kss-mod-list {
+  width:100%;
+}
+
+#kss-content {
+  >header >h1 {
+    @include background-gradient(darken($gray,40),darken($gray,60));
+    color: #FFF;
+    padding-top: .5em;
+    text-align: center;
+  }
+  .class {
+    font-family: "Courier";
+    display: inline-block;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+  }
+}
+.kss-mod-name {
+  text-align:right;
+  width:20%;
+  font-size:0.75em;
+}
+
+.kss-mod-example {
+  padding-bottom:20px;
+  display:block;
+  &>td { display:block; }
+}
+.kss-box {
+  p {
+    margin: 0 0 1em 0;
+  }
+}
+
+
+.kss-markup,
+.kss-output {
+  clear: both;
+  margin-bottom: 15px;
+  pre {
+    background-color: #EEE;
+  }
+  > div {
+    border-top: 1px solid #333;
+    padding-top: 5px;
+  }
+}
+.kss-output {
+  padding: 0 5px;
+}
+.kss-modifier {
+  color: #FFF;
+  font-family: Courier;
+  float: right;
+  margin-right: 15px;
+  padding: 3px;
+  background: #333;
+  width: 100px;
+  text-align: center;
+}
+.kss-markup {
+  max-height: 105px;
+  overflow: auto;
+  border-top: 1px solid #333;
+  cursor: pointer;
+}
+
+// ------------------------------------------------------------------------------
+//   @group prettyprint.js styling
+// ------------------------------------------------------------------------------
+/* Pretty printing styles. Used with prettify.js. */
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: #000 }  /* plain text */
+
+@media screen {
+  .str { color: #080 }  /* string content */
+  .kwd { color: #008 }  /* a keyword */
+  .com { color: #800 }  /* a comment */
+  .typ { color: #606 }  /* a type name */
+  .lit { color: #066 }  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: #660 }
+  .tag { color: #008 }  /* a markup tag name */
+  .atn { color: #606 }  /* a markup attribute name */
+  .atv { color: #080 }  /* a markup attribute value */
+  .dec, .var { color: #606 }  /* a declaration; a variable name */
+  .fun { color: red }  /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str { color: #060 }
+  .kwd { color: #006; font-weight: bold }
+  .com { color: #600; font-style: italic }
+  .typ { color: #404; font-weight: bold }
+  .lit { color: #044 }
+  .pun, .opn, .clo { color: #440 }
+  .tag { color: #006; font-weight: bold }
+  .atn { color: #404 }
+  .atv { color: #060 }
+}
+
+/* Put a border around prettyprinted code snippets. */
+/*pre.prettyprint { padding: 2px; border: 1px solid #888 }*/
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 { background: #eee }
+
+.smartphonePortrait {
+  background-image: url('public/img/iphone5.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 384px;
+  padding-top: 120px;
+  min-height: 800px;
+}
+.smartphoneLandscape {
+  background-image: url('public/img/iphone5-landscape.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 802px;
+  padding-top: 28px;
+  min-height: 400px;
+}
+.tabletPortrait{
+  background-image: url('public/img/ipad.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 886px;
+  padding-top: 118px;
+  min-height: 1400px;
+}
+.tabletLandscape {
+  background-image: url('public/img/ipad-landscape.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 1252px;
+  padding-top: 58px;
+  min-height: 1000px;
+}

@@ -1,0 +1,78 @@
+/* 
+Footer
+
+Markup:
+  <footer class="page-footer page-gutter">
+    <span>Copyright 2013</span>
+    <nav>
+    	<ul class="inline">
+        <li>
+          <a href="#">Press</a>
+        </li>
+        <li>
+          <a href="#">TOS</a>
+        </li>
+        <li>
+          <a href="#">Privacy</a>
+        </li>
+        <li>
+          <a href="#">About Us</a>
+        </li>
+        <li>
+          <a href="#">Login</a>
+        </li>
+      </ul>
+    </nav>
+    <ul class="inline seo-list">
+      <li>
+        <a href="#">SEO Link 1</a>
+      </li>
+      <li>
+        <a href="#">SEO Link 2</a>
+      </li>
+      <li>
+        <a href="#">SEO Link 3</a>
+      </li>
+    </ul>
+  </footer>
+
+Styleguide 5.3
+*/
+footer.page-footer {
+  @extend .clearfix;
+  background-color: $footer-background-color;
+  border-top: 7px solid darken($footer-background-color,20);
+  color: darken($footer-background-color,50);
+  font-family: $page-font-family-alt;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  > span {
+    @include col(6);
+    padding-top: 5px;
+  }
+  > nav {
+    @include col(18);
+    text-align: right;
+    li {
+      border-right: 1px solid darken($footer-background-color,50);
+      padding: 0 .5em 0 .3em;
+      font-size: .9em;
+      &:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+  a {
+    color: darken($footer-background-color,50);
+  }
+  .seo-list {
+    font-size: .8em;
+    float: right;
+    white-space: nowrap;
+    padding: 10px 0;
+    a {
+      color: darken($footer-background-color,20);
+    }
+  }
+}

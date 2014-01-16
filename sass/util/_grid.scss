@@ -1,27 +1,44 @@
-// Define column width (pagewidth chopped into 24 columns)
-$col_width: 100% / $numColumns;
+/*
+Grids
+
+The grid system is a collection of mixins that allow for an easy grid layout, divided into 24 virtual columns, which will be floated side by side. In almost all cases, you should aim for having a total of 24 columns in your grid layout. For example: col(12) translates to a column with a width of 50% of its container.<br /><br />
+
+  * <span class="class">col($n)</span>Define the width of your element, by passing this the number of desired columns.
+  * <span class="class">col-right($n)</span>Same as col(), but the column will be floated to the right instead of the default left.
+  * <span class="class">width($n)</span>Same as col(), but the column will be not be floated at all.
+  * <span class="class">prepend($n)</span>Prepend n blank columns.
+  * <span class="class">append($n)</span>Append n blank columns.
+
+Styleguide 2.1
+*/
+
+$grid-column-width: 100% / $grid-total-columns;
 
 @mixin col($n: 1) { 
   float: left;
-  width: ($n * $col_width);
+  width: ($n * $grid-column-width);
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
 }
-// Prepend n blank columns
+@mixin col-right($n: 1) {
+  float: right;
+  width: ($n * $grid-column-width);
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+@mixin width($n: 1) {
+  width: $grid-column-width * $n;
+}
 @mixin prepend($n: 1) {
-  margin-left: $col_width * $n;
+  margin-left: $grid-column-width * $n;
 }
-// Append n blank columns
 @mixin append($n: 1) {
-  margin-right: $col_width * $n;
+  margin-right: $grid-column-width * $n;
 }
-
-// Position n columns from the left (not necessarily absolute)
 @mixin left($n: 1) {
   float: none;
-  left: $col_width * $n;
+  left: $grid-column-width * $n;
 }
 
-// variant of 'col', specifying only the width, unfloated
-@mixin width($n: 1) {
-  float: none;
-  width: $col_width * $n;
-}

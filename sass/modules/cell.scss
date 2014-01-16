@@ -1,0 +1,23 @@
+/*
+Cell
+
+Markup:
+<div class="cell inline-block {$modifiers}"><img src="http://placehold.it/100x100/CCC/FFFFFF&text=img" width="100" height="100"/></div>
+
+.selected - Cell selected
+
+Styleguide 4.2
+*/
+
+.cell {
+   padding: 3px;
+	&:hover {
+	  border: 1px solid #3B5998;
+	  padding: 2px;
+	}
+	&.selected,
+	&.Selected {
+	  border: 2px solid #3B5998;
+	  padding: 1px;
+	}
+}

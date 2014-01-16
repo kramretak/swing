@@ -1,66 +1,65 @@
-.banner-fixed {
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index: 10000;
-}
+/*
+Banner
+
+Promotional banner, displayed inside the page header
+
+Markup:
+<section class="banner {$modifiers}">
+  <header>
+    <a href='/custom'>
+      <span class="text hidden-phone">Back to School Special: 15% Off and Free Shipping<x> on All Covers &amp; Cases! Code BTS13</span>
+      <span class="text visible-phone">Back to School: 15% Off + Free Shipping: <strong>BTS13</strong></span>
+      <span class="link">Shop Now</span>
+    </a>
+  </header>
+</section>
+
+.halloween      - 'Halloween' themed banner
+
+Styleguide 5.4
+*/
 .banner {
-  width: 98%;
-  padding: 1%;
-  border-bottom: 1px solid;
-  &.success {
-    @extend .banner-fixed;
-    background: $green-lightest;
-    border-color: $green-lighter;
-    color: $green-dark;
-    @extend .icon-check;
-    &:before {
-      font-size: 3em;
-      float: left;
-      margin-right: .5%;
-    }
-    .icon-close {
-      color: $green-dark;
-    }
-  }
-  &.promotion {
-    padding: .5% 1%;
-    font-family: $fontfamily-thick;
-    background-color: $pink-dark;
-    color: $white;
-    border: none;
+  @include background-gradient($page-header-background-color, $main-content-background-color);
+  padding: 1% $page-gutter-size 2%;
+  header {
+    background-color: $box-primary-bg;
+    border: 1px solid $border-color-default;
+    @include box-shadow(0 3px 5px $border-color-default);
+    padding: .5% 0;
     text-align: center;
-    cursor: pointer;
-    span {
-      display: inline-block;
-      padding-left: 16px;
-      position: relative;
+    h4 {
+      font-size: 1.2em;
     }
-    .icon-close {
-      color: $white;
-    }
-    .icon-phone:before {
-      font-size: 24px;
-      position: absolute;
-      top: -5px;
-      left: 0;
-    }
-    &:hover span {
+    a {
+      color: $page-link-color;
+      white-space: nowrap;
+      margin-left: .5em;
       text-decoration: underline;
     }
+    span {
+      color: darken($gray,20);
+    }
+    @media screen and (max-width: $page-width-smartphone) {
+      font-size: 1em;
+    }
+  }  
+  &.halloween header {
+    @include background-gradient($notice, darken($notice, 10%));
+    border: 2px solid $page-text-color;
+    .text {
+      color: $page-text-color;  
+    }
+    .link {
+      color: $white;
+    }
   }
-  &.large {
-    padding: 1.5% 1%;
-    font-size: 30px;
-  }
-
-  .icon-close {
-    margin-right: .5em;
-    float: right;
-  }
-
-  h3 {
-    font-weight: bold;
-    margin-bottom: 5px;
+  &.holidays {
+    .text {
+      color: #C54245;
+    }
+    header:hover {
+      border-color: #C54245;
+      background-color: #FEE3DF;
+    }
   }
 }

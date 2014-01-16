@@ -6,174 +6,167 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Swing CSS Library</title>
+  <title>Swing Living Styleguide</title>
   <meta name="description" content="">
   <meta name="generator" content="kss-node" />
-
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styleguide.css">
 
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="public/style.css">
-  <link rel="stylesheet" type="text/css" href="../css/styles.css">
-
-</head>
-<body><div id="kss-wrapper">
-  <div id="kss-nav">
-    <header id="kss-header">
-      <hgroup><h1>Swing CSS Library</h1></hgroup>
-    </header>
-    <aside>
-      <nav>
-        <ul>
-        
-          <li><a href="section-1.html">1.0: Variables</a></li>
-        
-        </ul>
-      </nav>
-    </aside>
-  </div>
-  <div role="main" id="kss-main">
-    <article id="kss-content">
-      
-        
+    <link rel="stylesheet" type="text/css" href="app.css">
+  </head>
+  <body>
+  <div role="main" class="main-content" style="padding-top: 1%;">
+    <div class="primary-box">
+      <article id="kss-content">
         
           
-           <section class="kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">2.1</span> - Badges</h1>
+
+          <ul class="sections" start="0">
+            
+              <li><a href="#2">2 Utility classes</a></li>
+            
+              <li><a href="#2.1">2.1 Grids</a></li>
+            
+              <li><a href="#2.2">2.2 Mixins</a></li>
+            
+              <li><a href="#2.3">2.3 Miscellaneous</a></li>
+                        
+          </ul>
+
+
           
             
-                <div class="kss-box"><p>Displaying a notification badge:</p>
-</div>
-                <table class="kss-mod-list">
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Default styling</p></td>
-                    <td class="kss-mod-name"></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">    <div class="badge">10</div>
-    <div class="badge-info">10</div>
-    <div class="badge-important">10</div></td>
-                  </tr>
-                
-                </table>
-                <div class="kss-markup">
-                  <pre class="prettyprint lang-html">    &lt;div class=&quot;badge&quot;&gt;10&lt;/div&gt;
-    &lt;div class=&quot;badge-info&quot;&gt;10&lt;/div&gt;
-    &lt;div class=&quot;badge-important&quot;&gt;10&lt;/div&gt;</pre>
-                </div>
+              <header>
+                <h1><span class="kss-ref">2</span> - Utility classes</h1>
+              </header>
             
-          
-            </section>
-          
-        
-          
-           <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">2.1.1</span> - Badge positioning helpers </h1>
+              
+                  
+              
+             
           
             
-                <div class="kss-box"><p>Add these classes to position the badge to a corner. Note that the badge&apos;s parent element should be contain the
-.relative helper class
+              <section class="kss-depth-2">
+                <header>
+                  <a href="#" name="2.1"></a>
+                  <h3><span class="kss-ref">2.1</span> - Grids</h3>
+                </header>
+            
+              
+                  
+                    <div class="padded"><p>The grid system is a collection of mixins that allow for an easy grid layout, divided into 24 virtual columns, which will be floated side by side. In almost all cases, you should aim for having a total of 24 columns in your grid layout. For example: col(12) translates to a column with a width of 50% of its container.<br /><br />
 
 </p>
-  <p><span class="relative">Hello world<span class="badge-info badge-tl">2</span></span></p>
-  <p><span class="relative">Hello world<span class="badge-info badge-tr">2</span></span></p>
-  <p><span class="relative">Hello world<span class="badge-info badge-bl">2</span></span></p>
-  <p><span class="relative">Hello world<span class="badge-info badge-br">2</span></span></p></div>
-                <table class="kss-mod-list">
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Default styling</p></td>
-                    <td class="kss-mod-name"></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">Markup:</td>
-                  </tr>
-                
-                </table>
-                <div class="kss-markup">
-                  <pre class="prettyprint lang-html">Markup:</pre>
-                </div>
+<ul>
+<li><span class="class">col($n)</span>Define the width of your element, by passing this the number of desired columns.</li>
+<li><span class="class">col-right($n)</span>Same as col(), but the column will be floated to the right instead of the default left.</li>
+<li><span class="class">width($n)</span>Same as col(), but the column will be not be floated at all.</li>
+<li><span class="class">prepend($n)</span>Prepend n blank columns.</li>
+<li><span class="class">append($n)</span>Append n blank columns.</li>
+</ul>
+</div>
+                  
+              
+            
+              </section>
             
           
-            </section>
+            
+              <section class="kss-depth-2">
+                <header>
+                  <a href="#" name="2.2"></a>
+                  <h3><span class="kss-ref">2.2</span> - Mixins</h3>
+                </header>
+            
+              
+                  
+                    <div class="padded"><p>util/_mixins.scss contains mixins, mostly around newer CSS3 properties. Use them by prefixing the mixin with &quot;@include&quot; (e.g. @include background-gradient(color1, color2) )<br /><br />
+
+
+</p>
+<ul>
+<li><span class="class">transparent($color, $alpha)</span> - Transparent background, 2nd param = decimal transparency level</li>
+<li><span class="class">background-gradient($a, $b)</span> - Top-down background gradient</li>
+<li><span class="class">background-gradient-ltr($a, $b)</span> - Background gradient, left to right</li>
+<li><span class="class">triple-gradient($a, $b, $c)</span> - Top-down background gradient with 3 colors</li>
+<li><span class="class">opacity($n)</span> - Apply cross-browser &apos;opacity&apos; style</li>
+<li><span class="class">border-radius($px)</span> - Apply cross-browser &apos;border-radius&apos;</li>
+<li><span class="class">box-shadow($px)</span> - Apply cross-browser &apos;box-shadow&apos;</li>
+<li><span class="class">text-rotate($deg)</span> - Rotate text, param = degrees</li>
+<li><span class="class">transition($transition)</span> - CSS3 Transition</li>
+<li><span class="class">transform ($transform)</span> - CSS3 Transform</li>
+</ul>
+</div>
+                  
+              
+            
+              </section>
+            
+          
+            
+              <section class="kss-depth-2">
+                <header>
+                  <a href="#" name="2.3"></a>
+                  <h3><span class="kss-ref">2.3</span> - Miscellaneous</h3>
+                </header>
+            
+              
+                  
+                    <div class="padded"><p>util/_misc.scss contains helper classes that are commonly used:<br/><br/>
+
+
+</p>
+<ul>
+<li><span class="class">.clearfix</span> - apply this to the parent container of floated elements, in order to clear the float.</li>
+<li><span class="class">.clear</span> - apply this to clear a previously floated sibling element.</li>
+<li><span class="class">.hide</span> - applies &quot;display: none&quot;</li>
+<li><span class="class">.left</span> - float an element to the left</li>
+<li><span class="class">.right</span> - float an element to the right</li>
+<li><span class="class">.center</span> - center position an element (note, this is NOT the same as .txt-center)</li>
+<li><span class="class">.relative</span> - apply &apos;position:relative&apos; to an element</li>
+<li><span class="class">.padded</span> - apply 2% padding to an element</li>
+<li><span class="class">.visible-phone</span> - Show an element ONLY on a smartphone-wide device</li>
+<li><span class="class">.visible-tablet</span> - Show an element ONLY on a tablet-wide device</li>
+<li><span class="class">.hidden-tablet</span> - Hide an element on tablet-wide devices and larger</li>
+<li><span class="class">.hidden-desktop</span> -  Hide an element on desktop-wide devices and larger</li>
+<li><span class="class">.visible-desktop</span> - Show an element ONLY on a desktop-wide device</li>
+</ul>
+</div>
+                  
+              
+            
+              </section>
+            
           
         
-          
-           <section class="kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">2.2</span> - Buttons</h1>
-          
-            
-                <div class="kss-box"></div>
-                <table class="kss-mod-list">
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Default styling</p></td>
-                    <td class="kss-mod-name"></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">    <a href="#" class="btn {modifiers}">Button</a>
-    <a href="#" class="btn-cta {modifiers}">Button</a>
-    <a href="#" class="btn-yay {modifiers}">Button</a>
-    <a href="#" class="btn-nay {modifiers}">Button</a></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Inactive/disabled version of the button</p>
-</td>
-                    <td class="kss-mod-name"><p>.inactive</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">    <a href="#" class="btn {modifiers}">Button</a>
-    <a href="#" class="btn-cta {modifiers}">Button</a>
-    <a href="#" class="btn-yay {modifiers}">Button</a>
-    <a href="#" class="btn-nay {modifiers}">Button</a></td>
-                  </tr>
-                
-                </table>
-                <div class="kss-markup">
-                  <pre class="prettyprint lang-html">    &lt;a href=&quot;#&quot; class=&quot;btn {modifiers}&quot;&gt;Button&lt;/a&gt;
-    &lt;a href=&quot;#&quot; class=&quot;btn-cta {modifiers}&quot;&gt;Button&lt;/a&gt;
-    &lt;a href=&quot;#&quot; class=&quot;btn-yay {modifiers}&quot;&gt;Button&lt;/a&gt;
-    &lt;a href=&quot;#&quot; class=&quot;btn-nay {modifiers}&quot;&gt;Button&lt;/a&gt;</pre>
-                </div>
-            
-          
-            </section>
-          
-        
-      
-    </article>
+      </article>
+    </div>
   </div>
-  <footer>
-    
-  </footer>
+
+
+
+
   <!-- SCRIPTS -->
   <script src="public/kss.js"></script>
   <script src="public/prettify.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="public/resbook.js"></script>
+  <script src="public/cssrefresh.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-      var sidebarAdjust = function() {
-        // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
 
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
-        } else {
-          $('#kss-main, #kss-nav').height(height);
-        }
-      };
-
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
-      sidebarAdjust();
+      $('.kss-markup').on('dblclick', function(e) {
+        this.style.maxHeight = 'none';
+        console.log(e);
+      })
 
       // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
+      $('pre').addClass('prettyprint');
       prettyPrint();
 
     });
   </script>
 
-</div></body>
+</body>
 </html>

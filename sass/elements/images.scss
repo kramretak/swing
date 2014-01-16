@@ -1,0 +1,19 @@
+/* 
+Images
+
+By default, images have no border. Optionally, a grey border can be added by using the .border-grey class. Additional class could be added later.
+
+Markup:
+    <img src="http://placehold.it/100x100/FF6600/FFFFFF&text=img" width="100" height="100" alt="No border" class="{$modifiers}" />
+
+.border-grey      - Add a grey border around the image.
+
+Styleguide 3.5
+*/
+
+img {
+  border: 0;
+  &.border-grey {
+    border: 1px solid $border-color-default;
+  }
+}

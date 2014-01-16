@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro page</title>
+	<link rel="stylesheet" type="text/css" href="../app.css">
+</head>
+<body>
+	<meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="../styleguide.css">
+</head>
+<body>
+
+  <section class="main-content" style="padding-top:1%;">
+    <div class="primary-box">
+      <article id="kss-content">
+        <header>
+          <h1>Swing Living CSS Styleguide</h1>
+        </header>
+        <div class="padded">
+          <p>This is a "living styleguide". That means that all changes made to the site's CSS, will automatically appear in this styleguide, so they can be tested and inconsistencies can be found easily.</p>
+          <p><br/>This styleguide, as well as the CSS source (written in SCSS) are organized as follows:</p>
+          <br/>
+          <ul>
+            <li>
+              <br/>
+              <p><strong>Variable definitions</strong></p>
+              <p>-> Sitewide variables are defined here. For example, <pre class="inline">$page-width-tablet</pre> tells all other CSS what we define as the Tablet cutoff in media queries. Rather than specifying this all over, we define it once, and reference the variable everywhere else. Site colors are defined here as well.</p>
+            </li>
+            <li>
+              <br/>
+              <p><strong>Utility classes</strong></p>
+              <p>-> These are CSS classes and mixins that can be included / referenced elsewhere. Example: a relatively new style is <pre class="inline">background-gradient</pre> and browsers have different ways of implementing the style, usually with a prefix, such as -webkit-. Rather than having to define these different browser-specific styles each time, we use a utility mixin, which will act as a function that returns all versions for us - very useful!</p>
+            </li>
+            <li>
+              <br/>
+              <p><strong>Elements</strong></p>
+              <p>-> Here we define the site's defaults such as fonts, helper classes for often used text modifications, headers, lists, images, buttons, badges. Example: apply the <pre class="inline">.btn</pre> class to an element and it will automatically look like a button. Or add <pre class="inline">.txt-s</pre> to a text that you would like to make a little smaller.</p>
+            </li>
+            <li>
+              <br/>
+              <p><strong>Modules</strong></p>
+              <p>-> Modules are similar to Elements, but rather than single elements, these are small snippets of often used modules. Examples of Modules are <pre class="inline">form</pre>, <pre class="inline">.box</pre> or <pre class="inline">.cell</pre>.</p>
+            </li>
+
+          </ul>
+          <p><br/>I encourage everyone who uses this styleguide or modifies the CSS, to study these different components. This will prevent duplication of styles that may already be declared elsewhere. This Styleguide is intended to help you find your way around the different components: use the navigation menu on the left to get started!</p>
+          <br/><p>On the bottom left of the page, you'll also find options to resize the screen to different devices. Note that this is a helpful tool, but it is not intended as a replacement for actual device testing. <span class="txt-notice">Layout differences may occur!</span></p>
+          <br/><p>Lastly, note that this Styleguide is using ALL of the actual styles used on the live site - in other words, feel free to use the Web Inspector on here to see which CSS classes are being applied. Thanks to a "CSS map", you will see which SCSS file generated the CSS, rather than having to look this up manually.</p>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>

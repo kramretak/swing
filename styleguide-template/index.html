@@ -6,124 +6,147 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Swing CSS Library</title>
+  <title>Swing Living Styleguide</title>
   <meta name="description" content="">
   <meta name="generator" content="kss-node" />
-
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styleguide.css">
 
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="public/style.css">
-  <link rel="stylesheet" type="text/css" href="../css/styles.css">
-
+{{#if overview}}
 </head>
-<body><div id="kss-wrapper">
+<body>
   <div id="kss-nav">
-    <header id="kss-header">
-      <hgroup><h1>Swing CSS Library</h1></hgroup>
-    </header>
+    <a href="index.html" class="logo"><img src="public/img/logo.png" width="200"/></a>
+    <h1>Swing CSS Styleguide</h1>
     <aside>
       <nav>
-        <ul>
+        <ol>
         {{#eachRoot}}
-          <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
+          <li><a href="section-{{reference}}.html" target="iframe" title="{{header}}">{{header}}</a></li>
         {{/eachRoot}}
-        </ul>
+        </ol>
       </nav>
     </aside>
   </div>
-  <div role="main" id="kss-main">
-    <article id="kss-content">
-      {{#if overview}}
-        {{html overview}}
-        <ul>
-        {{#eachRoot}}
-          <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
-        {{/eachRoot}}
-        </ul>
-      {{else}}
-        {{!
-          Find each section, in order.
-          If there's no markup or modifiers supplied, use a Markdown-only
-          layout instead.
-
-          The "root" element comes first in this loop, and can be detected using
-          the "#whenDepth 1" block as seen below.
-        }}
-        {{#eachSection rootNumber}}
-          {{#whenDepth 1}}
-            <h1 class="kss-title"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h1>
-          {{else}}
-           <section class="kss-depth-{{ refDepth }}">
-            <h1 class="kss-title"><span class="kss-ref">{{ reference }}</span> - {{ header }}</h1>
-          {{/whenDepth}}
-            {{#ifAny markup modifiers}}
-                <div class="kss-box">{{html description}}</div>
-                <table class="kss-mod-list">
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Default styling</p></td>
-                    <td class="kss-mod-name"></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">{{modifierMarkup}}</td>
-                  </tr>
-                {{#eachModifier}}
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc">{{html description}}</td>
-                    <td class="kss-mod-name"><p>{{name}}</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2">{{modifierMarkup}}</td>
-                  </tr>
-                {{/eachModifier}}
-                </table>
-                <div class="kss-markup">
-                  <pre class="prettyprint lang-html">{{markup}}</pre>
-                </div>
-            {{else}}
-                {{#if description}}
-                  {{html description}}
-                {{/if}}
-            {{/ifAny}}
-          {{#whenDepth 1}} {{else}}
-            </section>
-          {{/whenDepth}}
-        {{/eachSection}}
-      {{/if}}
-    </article>
+  <div id="kss-main">
+    <div role="main" id="wrapper">
+      <iframe src="public/intro.html" name="iframe" frameborder="0"></iframe>
+    </div>
   </div>
-  <footer>
-    {{#if argv.xdemo}}<a href="http://github.com/hughsk/kss-node"><img id="kss-github" style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>{{/if}}
-  </footer>
+    <ul id="devices">
+      <li><a href="#" class="auto icon-desktop active"></a></li>
+      <li><a href="#" class="tablet-landscape icon-tablet icon-landscape" title="Tablet Portrait"></a></li>
+      <li><a href="#" class="tablet-portrait icon-tablet" title="Tablet Landscape"></a></li>
+      <li><a href="#" class="smartphone-landscape icon-phone icon-landscape" title="iPhone Landscape"></a></li>
+      <li><a href="#" class="smartphone-portrait icon-phone" title="iPhone Portrait"></a></li>
+    </ul>
+    <div id="size"></div>
+{{else}}
+    <link rel="stylesheet" type="text/css" href="app.css">
+  </head>
+  <body>
+  <div role="main" class="main-content" style="padding-top: 1%;">
+    <div class="primary-box">
+      <article id="kss-content">
+        {{#if overview}}
+          {{html overview}}
+          <ul>
+          {{#eachRoot}}
+            <li><a href="section-{{reference}}.html">{{reference}}: {{header}}</a></li>
+          {{/eachRoot}}
+          </ul>
+        {{else}}
+          {{!
+            Find each section, in order.
+            If there's no markup or modifiers supplied, use a Markdown-only
+            layout instead.
+
+            The "root" element comes first in this loop, and can be detected using
+            the "#whenDepth 1" block as seen below.
+          }}
+
+          <ul class="sections" start="0">
+            {{#eachSection rootNumber}}
+              <li><a href="#{{ reference }}">{{ reference }} {{ header }}</a></li>
+            {{/eachSection}}            
+          </ul>
+
+
+          {{#eachSection rootNumber}}
+            {{#whenDepth 1}}
+              <header>
+                <h1><span class="kss-ref">{{ reference }}</span> - {{ header }}</h1>
+              </header>
+            {{else}}
+              <section class="kss-depth-{{ refDepth }}">
+                <header>
+                  <a href="#" name="{{ reference }}"></a>
+                  <h3><span class="kss-ref">{{ reference }}</span> - {{ header }}</h3>
+                </header>
+            {{/whenDepth}}
+              {{#ifAny markup modifiers}}
+
+                  {{#ifAny html description}}
+                    <div class="kss-box padded">{{html description}}</div>
+                  {{/ifAny}}
+                  
+                  <h4 class="kss-title">Default styling:</h4>
+                  <h5 class="kss-title">Preview</h5>
+                  <div class="kss-output">
+                    <div>{{modifierMarkup}}</div>
+                  </div>
+                  
+                  <h5 class="kss-title">HTML</h5>
+                  <div class="kss-markup">
+                    <pre class="prettyprint lang-html">{{markup}}</pre>
+                  </div>
+                  
+                  {{#eachModifier}}
+                    <h4 class="kss-title">{{html description}}</h4>
+                    <h5 class="kss-title">Preview</h5>
+                    <p class="kss-modifier">{{name}}</p>
+                    <div class="kss-output">
+                      <div>{{modifierMarkup}}</div>
+                    </div>
+                  {{/eachModifier}}
+
+              {{else}}
+                  {{#if description}}
+                    <div class="padded">{{html description}}</div>
+                  {{/if}}
+              {{/ifAny}}
+            {{#whenDepth 1}} {{else}}
+              </section>
+            {{/whenDepth}}
+          {{/eachSection}}
+        {{/if}}
+      </article>
+    </div>
+  </div>
+{{/if}}
+
+
+
   <!-- SCRIPTS -->
   <script src="public/kss.js"></script>
   <script src="public/prettify.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="public/resbook.js"></script>
+  <script src="public/cssrefresh.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-      var sidebarAdjust = function() {
-        // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
 
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
-        } else {
-          $('#kss-main, #kss-nav').height(height);
-        }
-      };
-
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
-      sidebarAdjust();
+      $('.kss-markup').on('dblclick', function(e) {
+        this.style.maxHeight = 'none';
+        console.log(e);
+      })
 
       // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
+      $('pre').addClass('prettyprint');
       prettyPrint();
 
     });
   </script>
 
-</div></body>
+</body>
 </html>

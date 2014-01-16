@@ -14,18 +14,25 @@ module.exports = function(grunt) {
         sass: {
             development: {
                 options: {
-                    style: 'expanded'
+                    style: 'expanded',
+                    noCache: true
+                    // noCache: true,
+                    // sourcemap: true
                 },
                 files: {
-                    'css/styles.css': 'sass/styles.scss'
+                    'css/styles.css': 'sass/styles.scss',
+                    'styleguide/app.css': 'sass/styles.scss',
+                    'styleguide/styleguide.css': 'styleguide-template/styleguide.scss'
                 }
-            },
+            }
+            ,
             production: {
                 options: {
                     style: 'compressed'
                 },
                 files: {
-                    'css/styles.min.css': 'sass/styles.scss'
+                    'css/styles.min.css': 'sass/styles.scss',
+                    'stats/styles.css': 'sass/styles.scss'
                 }
             }
         },
@@ -42,4 +49,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
 
     grunt.registerTask('default', ['clean', 'sass', 'copy', 'shell']);
+    //grunt.registerTask('default', ['sass']);
+    grunt.registerTask('prod', ['sass']);
 };

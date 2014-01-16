@@ -1,0 +1,86 @@
+/* 
+Text treatments
+
+  * <span class="class">&lt;p&gt;</span>Default text</span>
+  * <span class="class">&lt;a&gt;</span><a href="#">Default link</a></span>
+  * <span class="class">.txt-s</span><span class="txt-s">Small text</span>
+  * <span class="class">.txt-ss</span><span class="txt-ss">Tiny text</span>
+  * <span class="class">.txt-left</span><span class="txt-left">Left-aligned text</span>
+  * <span class="class">.txt-center</span><span class="txt-center inline-block">Center-aligned text</span>
+  * <span class="class">.txt-right</span><span class="txt-right inline-block">Right-aligned text</span>
+  * <span class="class">.txt-b</span><span class="txt-b">Bold text</span>
+  * <span class="class">.txt-u</span><span class="txt-u">Underlined text</span>
+  * <span class="class">.txt-i</span><span class="txt-i">Italic/Emphasized text</span>
+  * <span class="class">.txt-up</span><span class="txt-up">Uppercase text</span>
+  * <span class="class">.nowrap</span><span class="nowrap">>Prevent long string from breaking</span>
+  * <span class="class">.ellipsis</span><span class="ellipsis inline-block">Clip a long string after a given width and display ...</span>
+  * <span class="class">.ellipsis-inline</span><span class="ellipsis-inline">Clip a long string after a given width and display, inline instead of block ...</span>
+
+Styleguide 3.1
+*/
+a {
+  text-decoration: none;
+  color: $page-link-color;
+  &:hover {
+    text-decoration: underline;
+  }
+  &.underline {
+    text-decoration: underline;
+  }
+  &.disabled {
+    color: inherit;
+  }
+}
+.txt-ss {
+  font-size: .85em;
+  line-height: 1em;
+}
+.txt-s {
+  font-size: .9em;
+  line-height: 1.1em;
+}
+.txt-center {
+  text-align: center;
+}
+.txt-right {
+  text-align: right;
+}
+.txt-left {
+  text-align: left;
+}
+.txt-bold {
+  font-weight: bold;
+}
+.txt-u {
+  text-decoration: underline;
+}
+.txt-i {
+  font-style: italic;
+}
+.txt-up {
+  text-transform: uppercase;
+}
+.txt-success {
+  color: $success;
+}
+.txt-error {
+  color: $alert;
+}
+.txt-notice {
+  color: $notice;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ellipsis-inline {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

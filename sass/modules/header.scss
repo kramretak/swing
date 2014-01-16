@@ -1,0 +1,237 @@
+/* 
+Header
+
+Note that the styles for the Nav element are inherited from the Nav Modules (see Modules section)
+
+Markup:
+  <header class="page-header">
+    <section>  
+      <a href="/" class="branding"></a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">Cases and Covers</a>
+            <ul>
+              <li><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+              <li><a href="#">Item 4</a></li>
+            </ul>
+          </li>
+          <li class="hidden-phone">
+            <a href="#">Services</a>
+          </li>
+          <li class="hidden-phone">
+            <a href="#">About Us</a>
+          </li>
+          <li class="hidden-phone">
+            <a href="#">Support</a>
+          </li>
+          <li class-"not-empty">
+            <a href="#">Cart (1 item)</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section class="search-form"> 
+      <form>
+        <label>Search:</label>
+        <input type="text" class="input-txt" name="searchterm" placeholder="Search for products or designs" />
+        <input type="submit" class="btn-cta" value="Go" />
+      </form>
+      <p class="site-location"></p>
+    </section>
+  </header>
+
+Styleguide 5.2
+*/
+
+header.page-header {
+  background: $page-header-background-color;
+  @extend .clearfix;
+  > section {
+    &:first-child {
+      @include background-gradient($page-background-color, darken($page-background-color, 10%));
+      //@include box-shadow(0 4px 4px -2px darken($page-background-color, 10%));
+      @include box-shadow(0 2px 4px darken($page-background-color, 10%));
+      height: 30px;
+      line-height: 30px;
+      position: relative;
+    }
+  }
+  .branding {
+    @include col(7);
+    @include append(1);
+    background-image: url('/images/logo.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: $page-gutter-size;
+    max-width: 168px;
+    max-height: 26px;
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    // show hi-res for retina displays
+    @media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+      background-image: url('/images/logo@2x.png');
+    }
+    // fix positioning on smaller devices
+    @media screen and (max-width: $page-width-mini-tablet) {
+      top: 8px;
+    }
+  }
+  nav {
+    margin-right: $page-gutter-size;
+    .not-empty {
+      font-weight: bold;
+    }
+    > ul {
+      width: 100%;
+      text-align: right;
+      > li {
+        margin-left: 2%;
+        text-align: left;
+      }
+      li {
+        display: inline-block;
+        white-space: nowrap;
+        line-height: 2em;
+        ul {
+          top: 2em;
+        }
+        li {
+          display: block;
+          a:hover {
+            background: $selected-highlight;
+          }
+        }
+        &.manufacturers {
+          ul {
+            li {
+              position:relative;
+            }
+            ul {
+              display:none;
+              top:0;
+              left:160px;
+              position:absolute;
+              background-color: #8D9293;
+              width:360px;
+              @media screen and (max-width: $page-width-tablet) {
+                visibility: hidden;
+              }
+              li {
+                width:180px;
+                height:180px;
+                display:inline-block;
+                background-color:#A7AFB2;
+                .cell {
+                  padding:10px;
+                  -webkit-transition: background-color 300ms;
+                  -moz-transition: background-color 300ms;
+                  -ms-transition: background-color 300ms;
+                  -o-transition: background-color 300ms;
+                  transition: background-color 300ms;
+                  &:hover {
+                    background-color: $selected-highlight;
+                    border:none;
+                  }
+                }
+                a {
+                  background:white;
+                  width:150px;
+                  height:150px;
+                  padding:5px;
+                  font-size:15px;
+                  div {
+                    height:100px;
+                    width:150px;
+                    background-repeat:no-repeat;
+                    background-position:top left;
+                  }
+                  &:hover div {
+                    background-position:top right;
+                  }
+                  span {
+                    display:block;
+                    margin:3px 0 8px 5px;
+                    line-height:normal;
+                  }
+                  span+span {
+                    font-size:11px;
+                  }
+                }
+              }
+            }
+          }
+          > ul {
+            > li {
+              position:relative;
+              padding:0 5px;
+              &:hover ul {
+                display: block;
+              }
+            }
+          }
+          li span.arrow {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: url('/portals/0/images/selectorflows/menu-arrow.png') no-repeat 0 0;
+            float: right;
+            margin-top: 10px;
+            @media screen and (max-width: $page-width-tablet) {
+              display: none;
+            }
+          }
+        }
+        &.nav-cart {
+          min-width: 100px;
+        }
+      }
+    }
+    a {
+      display: block;
+      color: $page-text-color;
+      font-family: $page-font-family-alt;
+      padding: 0 0 0 5px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+section.search-form {
+  background: $page-header-background-color;
+  @include box-shadow(0 2px 4px $page-header-background-color);
+  padding: 10px 0 0;
+  text-align: center;
+  label,
+  input,
+  a,
+  .Label {
+    display: inline-block;
+  }
+  .input-txt {
+    width: 50%;
+    max-width: 250px;
+    @media screen and (max-width: $page-width-smartphone) {
+      max-width: 170px;
+    }
+  }
+}
+
+.fixed-header .page-header {
+  background-color: $page-background-color;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  > section {
+    width: 100%;
+    max-width: $page-width-desktop;
+    margin: auto;
+  }
+}

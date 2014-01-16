@@ -1,0 +1,58 @@
+/*
+Lists
+
+By default, lists will be stripped from their bullets, to make them easier to work with. Alternatively, you can add an "inline" class to make the list appear inline (instead of top to bottom) or add a "bulleted" class to force the bullets in front of the list items.
+
+Markup:
+  <ul class="{$modifiers}">
+    <li>Option A</li>
+    <li>Option B</li>
+    <li>Option C</li>
+  </ul>
+
+.inline    - Inline List
+.bulleted  - Bulleted list
+
+Styleguide 3.6
+*/
+ul {
+  list-style: none;
+}
+ul.inline {
+  li {
+    display: inline-block;
+  }
+}
+ul.bulleted {
+  list-style: disc outside;
+  padding-left: 1.4em;
+  &.two-cols {
+    @media screen and (min-width: $page-width-mini-tablet) {
+      padding-left: 1.4em;
+      list-style: outside disc;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      li {
+        -webkit-column-break-inside: avoid;
+        -moz-column-break-inside: avoid;
+        column-break-inside: avoid;
+        margin-left: 1.2em;
+      }
+    }
+  }
+}
+// two cols, no bullets
+ul.two-cols {
+  @media screen and (min-width: $page-width-mini-tablet) {
+    list-style: none;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    li {
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      column-break-inside: avoid;
+    }
+  }
+}

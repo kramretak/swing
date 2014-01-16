@@ -1,82 +1,47 @@
 /* 
 Colors
 
-Available color variables. Please use these variables instead of declaring your own hex or rgb(a) colors.
+Available color variables. Please use these variables instead of declaring your own hex or rgb(a) colors, in order to promote consistency across the site.<br/><br/>
 
-Markup:
-    <div class="badge" style="background: #FFF; border:1px solid #CCC;display:block;">$white</div>
-    <div class="badge" style="background: #000; border:1px solid #CCC; color:#FFF;display:block;">$black</div>
-    <div class="badge" style="background: #333; border:1px solid #CCC; color:#FFF;display:block;">$grey-darkest</div>
-    <div class="badge" style="background: #666; border:1px solid #CCC; color:#FFF;display:block;">$grey-darker</div>
-    <div class="badge" style="background: #999; border:1px solid #CCC; color:#FFF;display:block;">$grey-dark</div>
-    <div class="badge" style="background: #CCC; border:1px solid #CCC;display:block;">$grey</div>
-    <div class="badge" style="background: #EEE; border:1px solid #CCC;display:block;">$grey-light</div>
-    <div class="badge" style="background: #EFEFEF; border:1px solid #CCC;display:block;">$grey-lighter</div>
-    <div class="badge" style="background: #F7F7F7; border:1px solid #CCC;display:block;">$grey-lightest</div>
-    <div class="badge" style="background: #DDE9F3; border:1px solid #CCC;display:block;">$blue-lightest</div>
-    <div class="badge" style="background: #D8DDEE; border:1px solid #CCC;display:block;">$blue-lighter</div>
-    <div class="badge" style="background: #9AADCD; border:1px solid #CCC;display:block;">$blue-light</div>
-    <div class="badge" style="background: #4b93EE; border:1px solid #CCC;display:block;">$blue</div>
-    <div class="badge" style="background: #5C769E; border:1px solid #CCC; color:#FFF;display:block;">$blue-dark</div>
-    <div class="badge" style="background: #3B5998; border:1px solid #CCC; color:#FFF;display:block;">$blue-darker</div>
-    <div class="badge" style="background: #1a356e; border:1px solid #CCC; color:#FFF;display:block;">$blue-darkest</div>
-    <div class="badge" style="background: #34C1F5; border:1px solid #CCC;display:block;">$blue-bright</div>
-    <div class="badge" style="background: #3696FF; border:1px solid #CCC;display:block;">$blue-info</div>
-    <div class="badge" style="background: #D41F6C; border:1px solid #CCC;display:block;">$pink-dark</div>
-    <div class="badge" style="background: #EF5F9D; border:1px solid #CCC;display:block;">$pink</div>
-    <div class="badge" style="background: #A669D6; border:1px solid #CCC; color:#FFF;display:block;">$purple</div>
-    <div class="badge" style="background: #FFEBE8; border:1px solid #CCC;display:block;">$red-lightest</div>
-    <div class="badge" style="background: #EC4122; border:1px solid #CCC;display:block;">$red-light</div>
-    <div class="badge" style="background: #F00; border:1px solid #CCC;display:block;">$red</div>
-    <div class="badge" style="background: #E22B0A; border:1px solid #CCC;display:block;">$red-dark</div>
-    <div class="badge" style="background: #A31712; border:1px solid #CCC; color:#FFF;display:block;">$red-darkest</div>
-    <div class="badge" style="background: #E3F8DF; border:1px solid #CCC;display:block;">$green-lightest</div>
-    <div class="badge" style="background: #A0CE85; border:1px solid #CCC;display:block;">$green-lighter</div>
-    <div class="badge" style="background: #14CC6A; border:1px solid #CCC;display:block;">$green-light</div>
-    <div class="badge" style="background: #659300; border:1px solid #CCC;display:block;">$green</div>
-    <div class="badge" style="background: #298010; border:1px solid #CCC;display:block;">$green-dark</div>
-    <div class="badge" style="background: #006B7E; border:1px solid #CCC; color:#FFF;display:block;">$green-darker</div>
-    <div class="badge" style="background: #2D5200; border:1px solid #CCC; color:#FFF;display:block;">$green-darkest</div>
-    <div class="badge" style="background: #F9F5CD; border:1px solid #CCC;display:block;">$yellow-lighter</div>
-    <div class="badge" style="background: #FBE996; border:1px solid #CCC;display:block;">$yellow-light</div>
-    <div class="badge" style="background: #279BB0; border:1px solid #CCC; color:#FFF;display:block;">$turquoise</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #C3C6CB;">$page-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #252525; color: #FFF;">$page-text-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #304E79; color: #FFF;">$page-link-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FFF;">$page-header-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #EEF1F8;">$main-content-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #9FB3D7;">$heading-blue</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #C5DF9B;">$selected-highlight</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #AAA;">$footer-background-color</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FFF;">$white</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #CCC;">$gray</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #CCC;">$button-bg-default</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #3F94F6;">$button-bg-cta</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #CCC;">$border-color-default</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FFF;">$box-primary-bg</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #FEFEFE;">$box-secundary-bg</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #659300;">$success</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #F60;">$notice</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #F00;">$alert</div>
+  * <div class="badge" style="width: 250px; font-size:14px;background: #3696FF;">$info</div>
 
 Styleguide 1.2
 */
 
+$page-background-color: #C3C6CB;
+$page-text-color: #252525;
+$page-link-color: #304E79;
+$page-header-background-color: #FFF;
+$main-content-background-color: #EEF1F8;
+$heading-blue: #9FB3D7;
+$selected-highlight: #C5DF9B;
+$footer-background-color: #AAA;
 $white: #FFF;
-$black: #000;
-$grey-darkest: #333;
-$grey-darker: #666;
-$grey-dark: #999;
-$grey: #CCC;
-$grey-light: #EEE;
-$grey-lighter: #EFEFEF;
-$grey-lightest: #F7F7F7;
-$blue-lightest: #DDE9F3;
-$blue-lighter: #D8DDEE;
-$blue-light: #9AADCD; // FB Blue
-$blue: #4b93EE;
-$blue-dark: #5C769E;
-$blue-darker: #3B5998; // default link color
-$blue-darkest: #1a356e;
-$blue-bright: #34C1F5; // used in Facepile (Friends interested)
-$blue-info: #3696FF;
-$purple: #A669D6; // used in Facepile (Friends invited)
-$pink-dark: #D41F6C;
-$pink: #EF5F9D;
-$red-lightest: #FFEBE8;
-$red-light: #EC4122;
-$red: #F00;
-$red-dark: #E22B0A;
-$red-darkest: #A31712;
-$green-lightest: #E3F8DF;
-$green-lighter: #A0CE85;
-$green-light: #14CC6A; // used in Facepile (Friends going)
-$green: #659300;
-$green-dark: #298010;
-$green-darker: #006B7E; // green from the logo
-$green-darkest: #2D5200;
-$yellow-lighter: #F9F5CD;
-$yellow-light: #FBE996;
-$turquoise: #279BB0;
+$gray: #CCC;
+$button-bg-default: #CCC;
+$button-bg-cta: #3F94F6;
+$border-color-default: #CCC;
+$box-primary-bg: #FFF; // white
+$box-secundary-bg: #FEFEFE; // light gray
+$success: #659300; // green
+$notice: #F60; // orange
+$alert: #F00; // red
+$info: #3696FF; // blue

@@ -6,80 +6,71 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Swing CSS Library</title>
+  <title>Swing Living Styleguide</title>
   <meta name="description" content="">
   <meta name="generator" content="kss-node" />
-
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styleguide.css">
 
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="public/style.css">
-  <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
 </head>
-<body><div id="kss-wrapper">
+<body>
   <div id="kss-nav">
-    <header id="kss-header">
-      <hgroup><h1>Swing CSS Library</h1></hgroup>
-    </header>
+    <a href="index.html" class="logo"><img src="public/img/logo.png" width="200"/></a>
+    <h1>Swing CSS Styleguide</h1>
     <aside>
       <nav>
-        <ul>
+        <ol>
         
-          <li><a href="section-1.html">1.0: Variables</a></li>
+          <li><a href="section-1.html" target="iframe" title="Variable definitions">Variable definitions</a></li>
         
-        </ul>
+          <li><a href="section-2.html" target="iframe" title="Utility classes">Utility classes</a></li>
+        
+          <li><a href="section-3.html" target="iframe" title="Elements">Elements</a></li>
+        
+          <li><a href="section-4.html" target="iframe" title="Modules">Modules</a></li>
+        
+        </ol>
       </nav>
     </aside>
   </div>
-  <div role="main" id="kss-main">
-    <article id="kss-content">
-      
-        <h1>Live Styleguide</h1>
-<blockquote>
-<p>Work in progress</p>
-</blockquote>
-
-        <ul>
-        
-          <li><a href="section-1.html">1.0: Variables</a></li>
-        
-        </ul>
-      
-    </article>
+  <div id="kss-main">
+    <div role="main" id="wrapper">
+      <iframe src="public/intro.html" name="iframe" frameborder="0"></iframe>
+    </div>
   </div>
-  <footer>
-    
-  </footer>
+    <ul id="devices">
+      <li><a href="#" class="auto icon-desktop active"></a></li>
+      <li><a href="#" class="tablet-landscape icon-tablet icon-landscape" title="Tablet Portrait"></a></li>
+      <li><a href="#" class="tablet-portrait icon-tablet" title="Tablet Landscape"></a></li>
+      <li><a href="#" class="smartphone-landscape icon-phone icon-landscape" title="iPhone Landscape"></a></li>
+      <li><a href="#" class="smartphone-portrait icon-phone" title="iPhone Portrait"></a></li>
+    </ul>
+    <div id="size"></div>
+
+
+
+
   <!-- SCRIPTS -->
   <script src="public/kss.js"></script>
   <script src="public/prettify.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="public/resbook.js"></script>
+  <script src="public/cssrefresh.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-      var sidebarAdjust = function() {
-        // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
 
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
-        } else {
-          $('#kss-main, #kss-nav').height(height);
-        }
-      };
-
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
-      sidebarAdjust();
+      $('.kss-markup').on('dblclick', function(e) {
+        this.style.maxHeight = 'none';
+        console.log(e);
+      })
 
       // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
+      $('pre').addClass('prettyprint');
       prettyPrint();
 
     });
   </script>
 
-</div></body>
+</body>
 </html>

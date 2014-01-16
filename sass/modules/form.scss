@@ -1,0 +1,102 @@
+/* 
+Forms
+
+Markup:
+    <form class="{$modifiers}">
+        <label>Search:</label>
+        <input type="text" name="search" placeholder="Search" class="input-txt" />
+        <input type="submit" value="Search" class="btn" />
+    </form>
+
+.inline      - Inline Form
+
+Styleguide 4.6
+*/
+
+form {
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input {
+    display: block;
+  }
+}
+input, select, textarea {
+  font-family: $page-font-family;
+  font-size: $page-font-size;
+  @media screen and (max-width: $page-width-smartphone) {
+    font-size: $page-font-size*.9;
+  }
+}
+input[type="text"],
+input[type="password"],
+.input-txt,
+textarea {
+  padding: 3px 0 4px 5px;
+  border: 1px inset lighten($border-color-default, 10);
+  @include box-shadow(inset 1px 1px 2px $gray);
+}
+input[type="radio"] {
+  clear: left;
+  float: left;
+  margin-top: 2px;
+}
+
+.inline {
+  label,
+  input,
+  .btn-submit,
+  .btn-cta {
+    display: inline-block;
+  }
+}
+
+.form-fullwidth {
+  p {
+    @extend .clearfix;
+    padding: 1% 0;
+    span {
+      float: left;
+      @media screen and (min-width: $page-width-tablet) {
+        width: 55%;
+      }
+    }
+    b {
+      display: block;
+      font-size: .8em;
+      font-weight: normal;
+    }
+  }
+  label {
+    display: block;
+    @media screen and (min-width: $page-width-tablet) {
+      clear: left;
+      float: left;
+      line-height: 1.8em;
+      padding-right: 2%;
+      width: 40%;
+      text-align: right;
+      &.or-divider {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+  select {
+    margin: 3px 0;
+  }
+  h4 {
+    background: lighten($gray, 10);
+    font-weight: bold;
+    margin: 3% 0;
+    padding: 1%;
+    text-align: center;
+  }
+  @media screen and (max-width: $page-width-smartphone) {
+    .btn-cta {
+      width: 96%;
+      padding: 2%;
+    }
+  }
+}

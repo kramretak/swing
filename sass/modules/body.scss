@@ -1,0 +1,39 @@
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow-y: scroll;
+}
+body {
+  font-family: $page-font-family;
+  font-size: $page-font-size;
+  background-color: $page-background-color;
+  @include radial-gradient(#66c9e6, #00a0cc);
+  color: $page-text-color;
+  max-width: $page-width-desktop;
+  margin: auto;
+  box-sizing: border-box;
+  &.fixed-header {
+    padding-top: 66px;
+  }
+  @media screen and (max-width: $page-width-smartphone) {
+    font-size: $page-font-size*.9;
+  }
+}
+.page-gutter {
+  width: 100%-(2*$page-gutter-size);
+  padding: 0 $page-gutter-size 2%;
+}
+.main-content {
+  background-color: $main-content-background-color;
+  padding: 0 $page-gutter-size 2%;
+  @extend .clearfix;
+}
+// bit of a hack to hack around existing hacks.....
+.no-banner {
+  .search-form {
+    display: none;
+  }
+}

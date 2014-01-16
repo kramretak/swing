@@ -1,0 +1,79 @@
+/* 
+
+Badges
+
+Displaying a notification badge:
+
+Markup:
+    <p><span class="class">.badge</span><span class="badge inline-block">10</span></p>
+    <p><span class="class">.badge-info</span><span class="badge-info inline-block">10</span></p>
+    <p><span class="class">.badge-important</span><span class="badge-important inline-block">10</span></p>
+
+Styleguide 3.7
+*/
+.badge {
+  display: inline-block;
+  @include border-radius(11px);
+  background-color: $button-bg-default;
+  color: darken($button-bg-default,40);
+  font-size: 0.8em;
+  font-weight: bold;
+  @include box-shadow(0 0 2px 1px darken($button-bg-default,40));
+  min-width: 12px;
+  min-height: 12px;
+  line-height: 12px;
+  padding: 5px;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.badge-info {
+  @extend .badge;
+  background-color: $info;
+  color: $white;
+}
+.badge-important {
+  @extend .badge;
+  background-color: lighten($alert, 20);
+  color: $white;
+  &:hover {
+    background-color: lighten($alert, 10);
+  }
+}
+
+/*
+Badge positioning helpers 
+
+Add these classes to position the badge to a corner. Note that the badge's parent element should be contain the
+.relative helper class
+
+Markup:
+
+  <p><span class="relative">Hello world<span class="badge-info badge-tl">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-tr">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-bl">2</span></span></p>
+  <p><span class="relative">Hello world<span class="badge-info badge-br">2</span></span></p>
+
+Styleguide 7.1
+*/
+.badge-tl {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+.badge-tr {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+.badge-bl {
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+}
+.badge-br {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+}

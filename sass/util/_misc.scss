@@ -1,3 +1,25 @@
+/*
+Miscellaneous
+
+util/_misc.scss contains helper classes that are commonly used:<br/><br/>
+
+
+  * <span class="class">.clearfix</span> - apply this to the parent container of floated elements, in order to clear the float.
+  * <span class="class">.clear</span> - apply this to clear a previously floated sibling element.
+  * <span class="class">.hide</span> - applies "display: none"
+  * <span class="class">.left</span> - float an element to the left
+  * <span class="class">.right</span> - float an element to the right
+  * <span class="class">.center</span> - center position an element (note, this is NOT the same as .txt-center)
+  * <span class="class">.relative</span> - apply 'position:relative' to an element
+  * <span class="class">.padded</span> - apply 2% padding to an element
+  * <span class="class">.visible-phone</span> - Show an element ONLY on a smartphone-wide device
+  * <span class="class">.visible-tablet</span> - Show an element ONLY on a tablet-wide device
+  * <span class="class">.hidden-tablet</span> - Hide an element on tablet-wide devices and larger
+  * <span class="class">.hidden-desktop</span> -  Hide an element on desktop-wide devices and larger
+  * <span class="class">.visible-desktop</span> - Show an element ONLY on a desktop-wide device
+
+Styleguide 2.3
+*/
 .clearfix {
   zoom: 1;
   &:before,
@@ -11,7 +33,20 @@
     clear: both;
   }
 }
-.hide {
+.clear {
+  clear: both;
+}
+.inline {
+  display: inline !important;
+}
+.block {
+  display: block !important;
+}
+.inline-block {
+  display: inline-block !important;
+}
+.hide,
+.Hide {
   display: none;
 }
 .left {
@@ -26,6 +61,9 @@
 }
 .relative {
   position: relative;
+}
+.padded {
+  padding: 2%;
 }
 
 /* Responsive hide/show classes */
@@ -45,7 +83,7 @@
   display: inherit !important;
 }
 
-@media screen and (max-width: $widthTablet) {
+@media screen and (max-width: $page-width-tablet) {
   .hidden-desktop {
     display: inherit !important;
   }
@@ -60,7 +98,7 @@
   }
 }
 
-@media screen and (max-width: $widthMiniTablet) {
+@media screen and (max-width: $page-width-mini-tablet) {
   .hidden-desktop {
     display: inherit;
   }
@@ -69,5 +107,8 @@
   }
   .visible-phone {
     display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
   }
 }

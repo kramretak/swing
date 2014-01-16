@@ -1,26 +1,49 @@
-@import '_variables';
+/* 
+Variable definitions
+
+Styleguide 1
+*/
+
+@import 'variables/_settings.scss';
+@import 'variables/_colors.scss';
+
+
+/*
+Utility classes
+
+Styleguide 2
+*/
 @import '_util';
 
+/*
+Elements
 
-@import 'layout/page';
-@import 'layout/header';
-@import 'layout/sidebar';
-@import 'layout/modal';
+Styleguide 3
+*/
+@import 'elements/badges';
+@import 'elements/buttons';
+@import 'elements/headings';
+//@import 'elements/icons';
+@import 'elements/images';
+@import 'elements/lists';
+@import 'elements/text';
 
+/*
+Modules
 
-@import 'icons';
-@import 'badges';
-@import 'buttons';
-@import 'forms';
-@import 'images';
-@import 'lists';
+Styleguide 4
+*/
+@import 'modules/body';
+@import 'modules/footer';
+@import 'modules/header';
 
-@import 'modules/banner';
-@import 'modules/facepile';
-@import 'modules/friendbar';
+@import 'modules/box';
+@import 'modules/breadcrumb';
+@import 'modules/cell';
 @import 'modules/carousel';
-@import 'modules/popover';
 @import 'modules/dropdown';
-@import 'modules/tipsy';
-@import 'modules/datepicker';
-@import 'modules/share_widget';
+@import 'modules/font-menu';
+@import 'modules/form';
+@import 'modules/banner';
+
+

@@ -1,0 +1,125 @@
+/* 
+Buttons
+
+Buttons can be either &lt;a&gt;, &lt;input&gt; or &lt;button&gt; elements, as long as they have a **`.btn`** class.
+
+Markup:
+    <a href="#" class="btn {$modifiers}">Button</a>
+    <a href="#" class="btn-cta {$modifiers}">Button</a>
+
+.btn-large        - Large (desktop only)
+.btn-xlarge       - XL (desktop only)
+.btn-disabled     - Disabled state
+
+Styleguide 3.3
+*/
+
+%btn-default {
+  @include border-radius(3px);
+  cursor: pointer;
+  display: inline-block;
+  font-size: .9em;
+  min-width: 50px;
+  margin-bottom: 4px;
+  padding: 4px 10px;
+  text-align: center;
+  white-space: nowrap;
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    @include box-shadow(1px 1px 1px darken($button-bg-default,50));
+  }
+  &.ui-state-disabled:active,
+  &.btn-disabled:active {
+    position: static;
+  }
+}
+
+.btn {
+  @extend %btn-default;
+  background: $button-bg-default;
+  border: 1px solid $button-bg-default;
+  @include box-shadow(1px 1px 1px darken($button-bg-default,40));
+  color: darken($button-bg-default,50);
+  &:hover {
+    background: darken($button-bg-default,20);
+    border-color: darken($button-bg-default,20);
+    color: $white;
+  }
+  &.ui-state-disabled,
+  &.btn-disabled {
+    background: lighten($button-bg-default, 10);
+    color: $button-bg-default !important;
+    @include box-shadow(none);
+    text-shadow: none;
+    cursor: wait;
+  }
+}
+
+.btn-cta {
+  @extend %btn-default;
+  font-family: $page-font-family-alt;
+  text-shadow: 1px 1px 1px #2369D7;
+  color: #FFF !important;
+  border: 1px solid #2369D7;
+  @include box-shadow(inset 0 2px 0 #5BA3F8);
+  @include background-gradient(#3F94F6,#2369D7);
+  &:hover {
+    @include background-gradient(#4CA1EA, #3278CB);
+  }
+  &.ui-state-disabled,
+  &.btn-disabled {
+    @include background-gradient(lighten(#3F94F6,20),lighten(#2369D7,10));
+    @include box-shadow(none);
+    border-color: #3F94F6;
+    color: darken(#3F94F6,10) !important;
+    text-shadow: none;
+    cursor: wait;
+  }
+}
+.btn-cta-b {
+  @extend %btn-default;
+  @include triple-gradient(#FFC457, #FFDC5E, #F3841B);
+  &:hover {
+    @include triple-gradient(#FFE9C0, #FFF1DA, #FFE687);
+  }
+}
+.ui-state
+
+.btn-submit {
+  @extend %btn-default;
+  @include triple-gradient(#ABADB0, #E3E4E5, #A0A2A5);
+  &:hover {
+    @include triple-gradient(#C0C2C4, #E6E7E7, #AEB0B2);
+  }
+}
+
+.btn-large {
+  @include border-radius(5px);
+  @media screen and (min-width: $page-width-tablet) {
+    font-size: 1.3em;
+    border-width: 2px;
+    padding: 5px 15px;
+  }
+  @media screen and (min-width: $page-width-desktop) {
+    font-size: 1.5em;
+    padding: 6px 15px;
+  }
+  @media screen and (max-width: $page-width-tablet) {
+    @include border-radius(5px);
+    font-size: 1em;
+    padding: 4%;
+  }
+}
+.btn-xlarge {
+  @media screen and (min-width: $page-width-tablet) {
+    @include border-radius(7px);
+    border-width: 2px;
+    font-size: 2.4em;
+    padding: 10px 22px;
+  }
+}

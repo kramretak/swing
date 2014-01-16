@@ -1,18 +1,3 @@
-/* 
-  <h1>Util</h1>
-  <h2>Imports all Utility files</h2>
-
-  @import 'util/grid';
-  @import 'util/misc';
-  @import 'util/mixins';
-  @import 'util/text';
-  @import 'util/animate';
-  @import 'util/msie';
-*/
-
 @import 'util/grid';
-@import 'util/misc';
 @import 'util/mixins';
-@import 'util/text';
-@import 'util/animate';
-@import 'util/msie';
+@import 'util/misc';

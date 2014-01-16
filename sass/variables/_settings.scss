@@ -1,0 +1,36 @@
+/* 
+Application Settings
+
+The CSS is built "responsively", meaning that it will behave differently on different screen sizes, using the same codebase. In order to keep the different behavior across devices / screen sizes maintainable, the CSS is divided up into 5 screen size "tiers":
+
+
+  * <span class="class">$page-width-smartphone</span>All screens with a width up to 360px
+  * <span class="class">$page-width-smartphone-landscape</span>Smartphones in Landscape mode - Screens up to 480px
+  * <span class="class">$page-width-mini-tablet</span>Large smartphones and Mini Tablets - Up to 568px
+  * <span class="class">$page-width-tablet</span>Tablets Screens up to 768px
+  * <span class="class">$page-width-desktop</span>Tablets in Landscape and everything Desktop sized, 960px and up
+  * <span class="class">$grid-total-columns</span>Set to 24 columns
+  * <span class="class">$animation-transition-time</span>By default, CSS transitions will run for 0.3 seconds.
+  * <span class="class">$page-font-family</span>Default font family, set to "Trebuchet", "Lucida Grande"
+  * <span class="class">$page-font-family-alt</span>Alternative font family, set to "Arial", "Helvetica Neue"
+  * <span class="class">$page-font-size</span>Default font size, set to 14px.
+
+Styleguide 1.1
+*/
+
+// tiers of screensizes
+$page-width-desktop: 960px;
+$page-width-tablet: 768px;
+$page-width-mini-tablet: 568px;
+$page-width-smartphone-landscape: 480px;
+$page-width-smartphone: 360px;
+
+$grid-total-columns: 24;
+$page-gutter-size: 2%;
+
+// keeping consistent animations
+$animation-transition-time: 0.3s;
+
+$page-font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$page-font-family-alt: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$page-font-size: 14px;

@@ -1,0 +1,207 @@
+@font-face{font-family:'Bauhaus';src:url('/portals/0/fonts/bauhs93.eot');src:local('Bauhaus 93'),url('/portals/0/fonts/bauhs93.woff') format('woff'),url('/portals/0/fonts/bauhs93.ttf') format('truetype');font-style:normal;font-weight:normal}
+@font-face{font-family:'Cooper';src:url('/portals/0/fonts/coopbl.eot');src:local('Cooper Black'),url('/portals/0/fonts/coopbl.woff') format('woff'),url('/portals/0/fonts/coopbl.ttf') format('truetype');font-style:normal;font-weight:normal}
+@font-face{font-family:'Copperplate';src:url('/portals/0/fonts/coprgtl.eot');src:local('Copperplate Gothic Light'),url('/portals/0/fonts/coprgtl.woff') format('woff'),url('/portals/0/fonts/coprgtl.ttf') format('truetype');font-style:normal;font-weight:normal}
+@font-face{font-family:'CopperplateBold';src:url('/portals/0/fonts/copperplate-bold.eot');src:local('Copperplate Gothic Bold'),url('/portals/0/fonts/copperplate-bold.woff') format('woff'),url('/portals/0/fonts/copperplate-bold.ttf') format('truetype');font-style:normal;font-weight:normal}
+@font-face{font-family:'Garamond';src:url('/portals/0/fonts/garamond.eot');src:local('Garamond'),url('/portals/0/fonts/garamond.woff') format('woff'),url('/portals/0/fonts/garamond.ttf') format('truetype');font-style:normal;font-weight:normal}
+@font-face{font-family:'Handwriting';src:url('/portals/0/fonts/lucidahandwrit.eot');src:local('Lucida Handwrit'),url('/portals/0/fonts/lucidahandwrit.woff') format('woff'),url('/portals/0/fonts/lucidahandwrit.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'Hobo';src:url('/portals/0/fonts/hobostd.eot');src:local('Hobo Std'),url('/portals/0/fonts/hobostd.woff') format('woff'),url('/portals/0/fonts/hobostd.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'Myriad';src:url('/portals/0/fonts/myriad.eot');src:local('Myriad Pro'),url('/portals/0/fonts/myriad.woff') format('woff'),url('/portals/0/fonts/myriad.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'PrinceValiant';src:url('/portals/0/fonts/princevaliant.eot');src:local('Prince Valiant'),url('/portals/0/fonts/princevaliant.woff') format('woff'),url('/portals/0/fonts/princevaliant.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'Cambria';src:url('/portals/0/fonts/cambriab.eot');src:local('Cambria'),url('/portals/0/fonts/cambriab.woff') format('woff'),url('/portals/0/fonts/cambriab.ttf') format('truetype');font-style:normal;font-weight:normal}
+@font-face{font-family:'Manuskript';src:url('/portals/0/fonts/manuskript.eot');src:local('ManuskriptGotisch'),url('/portals/0/fonts/manuskript.woff') format('woff'),url('/portals/0/fonts/manuskript.ttf') format('truetype');font-style:normal;font-weight:normal}
+
+.sf-menu {
+  line-height:1.0;
+  ul { position:absolute;
+    top:-999em;
+    width:12em;
+    z-index:100;
+    li {
+      width:100%;
+    }
+  }
+  li {
+    float:left;
+    position:relative;
+    list-style: none !important; // required to override admincss
+    &:hover {
+      visibility:inherit;
+    }
+  }
+  a {
+    display:block;
+    position:relative;
+  }
+}
+
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+  left: 0;
+  top: 29px;
+  z-index: 99;
+}
+.sf-menu.imgddl li:hover ul,
+.sf-menu.imgddl li.sfHover ul {
+  top: 23px;
+}
+ul.sf-menu li:hover li ul,
+ ul.sf-menu li.sfHover li ul {
+  top: -999em;
+}
+ul.sf-menu li li:hover ul,
+ ul.sf-menu li li.sfHover ul {
+  left: 10em;
+  top: 0;
+}
+ul.sf-menu li li:hover li ul,
+ ul.sf-menu li li.sfHover li ul {
+  top: -999em;
+}
+ul.sf-menu li li li:hover ul,
+ ul.sf-menu li li li.sfHover ul {
+  left: 10em;
+  top: 0;
+}
+.sf-menu>li {
+  margin-right: 13px;
+}
+.sf-menu a {
+  font-size: 15px;
+  font-weight: normal;
+  color: white;
+  padding: 7px 10px 7px 10px;
+  text-decoration: none;
+}
+.sf-menu.imgddl a {
+  font-size: 14px;
+  color: black;
+  border: solid 1px #c3c3c3;
+  width: 120px;
+  height: 20px;
+  padding: 2px 0 0 2px;
+  background-color: white;
+}
+.sf-menu a:visited {
+  color: white;
+}
+.sf-menu.imgddl a:visited {
+  color: Black;
+}
+.sf-menu li li {
+  background: #60677E;
+}
+.sf-menu.imgddl li li {
+  background: white;
+}
+.sf-menu.imgddl li li a {
+  border: 0;
+}
+.sf-menu.imgddl li ul {
+  width: 147px;
+  border: solid 1px #c3c3c3;
+}
+.sf-menu li li li {
+  background: #9AAEDB;
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover,
+.sf-menu a:focus,
+.sf-menu a:hover,
+.sf-menu a:active {
+  background: #60677E;
+  outline: 0;
+}
+.sf-menu li li:hover,
+.sf-menu li li.sfHover,
+.sf-menu li li a:focus,
+.sf-menu li li a:hover,
+.sf-menu li li a:active {
+  background: #9EA8CB;
+}
+.sf-menu.imgddl li:hover,
+.sf-menu.imgddl li.sfHover,
+.sf-menu.imgddl a:focus,
+.sf-menu.imgddl a:hover,
+.sf-menu.imgddl a:active {
+  background: #3099ff;
+}
+.sf-menu.imgddl>li:hover,
+.sf-menu.imgddl>li.sfHover,
+.sf-menu.imgddl>li>a:focus,
+.sf-menu.imgddl>li>a:hover,
+.sf-menu.imgddl>li>a:active {
+  background: white;
+}
+.sf-menu .sf-selected {
+  background: #60677E;
+}
+.sf-menu a.sf-with-ul {
+  padding-right: 1.8em;
+  min-width: 1px;
+}
+a .sf-sub-indicator {
+  position: absolute;
+  display: block;
+  right: .75em;
+  top: 13px;
+  width: 10px;
+  height: 10px;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: -10px -140px;
+}
+.imgddl a .sf-sub-indicator {
+  top: 1px;
+  right: 1px;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: -41px -41px;
+  background-color: #fff;
+  border: solid 1px #c3c3c3;
+}
+a>.sf-sub-indicator {
+  top: 9px;
+  background-position: 0 -140px;
+}
+a:focus>.sf-sub-indicator,
+ a:hover>.sf-sub-indicator,
+ a:active>.sf-sub-indicator,
+ li:hover>a>.sf-sub-indicator,
+ li.sfHover>a>.sf-sub-indicator {
+  background-position: -10px -140px;
+}
+.imgddl a:focus>.sf-sub-indicator,
+.imgddl a:hover>.sf-sub-indicator,
+.imgddl a:active>.sf-sub-indicator,
+.imgddl li:hover>a>.sf-sub-indicator,
+.imgddl li.sfHover>a>.sf-sub-indicator {
+  background-color: #e0e0e0;
+  background-position: -41px -41px;
+}
+.sf-menu ul .sf-sub-indicator {
+  background-position: -10px -40px;
+}
+.sf-menu ul a>.sf-sub-indicator {
+  background-position: -40px -40px;
+}
+.sf-menu ul a:focus>.sf-sub-indicator,
+.sf-menu ul a:hover>.sf-sub-indicator,
+.sf-menu ul a:active>.sf-sub-indicator,
+.sf-menu ul li:hover>a>.sf-sub-indicator,
+.sf-menu ul li.sfHover>a>.sf-sub-indicator {
+  background-position: -10px -40px;
+}
+.sf-shadow ul {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  padding: 0 8px 9px 0;
+  -moz-border-radius-bottomleft: 17px;
+  -moz-border-radius-topright: 17px;
+  -webkit-border-top-right-radius: 17px;
+  -webkit-border-bottom-left-radius: 17px;
+}
+.sf-shadow ul.sf-shadow-off {
+  background: transparent;
+}
